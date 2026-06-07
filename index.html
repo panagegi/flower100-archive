@@ -1,19 +1,415 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>花の百名山アーカイブ</title>
+  <meta charset="UTF-8">
+  <title>新・花の百名山</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070907;
+      --text: #f4efe4;
+      --muted: rgba(244,239,228,.66);
+      --gold: #d4b56a;
+      --line: rgba(244,239,228,.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.88)),
+        url("assets/background-autumn.png") center / cover fixed;
+      color: var(--text);
+      font-family: "IBM Plex Sans JP", sans-serif;
+      overflow: hidden;
+    }
+
+    .page {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 28% 72%;
+      align-items: center;
+      gap: 34px;
+      padding: 72px 84px;
+    }
+
+    .title-area {
+      z-index: 2;
+      align-self: start;
+      padding-top: 1vh;
+      max-width: 360px;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .26em;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 3.2vw, 46px);
+      font-weight: 600;
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+
+    .subtitle {
+      margin-top: 16px;
+      font-size: 13px;
+      line-height: 1.75;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    .subtitle-en {
+      display: block;
+      color: var(--text);
+      font-size: clamp(10px, .82vw, 12px);
+      margin-bottom: 8px;
+      white-space: nowrap;
+      letter-spacing: .01em;
+    }
+
+    .progress {
+      margin-top: 26px;
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .progress span {
+      font-size: 18px;
+      color: rgba(244,239,228,.5);
+    }
+
+    .explore {
+      margin-top: 30px;
+      max-width: 340px;
+      padding-bottom: 40px;
+    }
+
+    .explore-title {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .22em;
+      margin-bottom: 12px;
+    }
+
+    .explore-links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    .explore-links a {
+      position: relative;
+      display: grid;
+      grid-template-columns: 22px 1fr 16px;
+      align-items: center;
+      min-height: 34px;
+      padding: 5px 0 7px;
+      border-bottom: 1px solid rgba(244,239,228,.13);
+      color: rgba(244,239,228,.82);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: .08em;
+      transition: color .25s ease, padding-left .25s ease;
+    }
+
+    .explore-links a::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border: 1px solid rgba(212,181,106,.55);
+      border-radius: 50%;
+      opacity: .82;
+    }
+
+    .explore-links a::after {
+      content: "→";
+      color: rgba(212,181,106,.72);
+      font-size: 12px;
+      justify-self: end;
+      transition: transform .25s ease;
+    }
+
+    .explore-links a:hover {
+      color: var(--gold);
+      padding-left: 8px;
+    }
+
+    .explore-links a:hover::after {
+      transform: translateX(4px);
+    }
+
+    .map-area {
+      position: relative;
+      width: min(72vw, 1060px);
+      margin-left: auto;
+      transform: translateY(-4px);
+    }
+
+    .map-area img {
+      width: 100%;
+      display: block;
+      filter: invert(1) brightness(1.35) opacity(.72);
+    }
+
+    .pin {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(244,239,228,.38);
+      border: 1px solid rgba(244,239,228,.4);
+      cursor: pointer;
+    }
+
+    .pin.visited {
+      width: 15px;
+      height: 15px;
+      background: var(--gold);
+      border: none;
+      box-shadow:
+        0 0 0 6px rgba(212,181,106,.16),
+        0 0 26px rgba(212,181,106,.9);
+      z-index: 3;
+    }
+
+    .pin.visited::after {
+      content: "";
+      position: absolute;
+      inset: -14px;
+      border-radius: 50%;
+      border: 1px solid rgba(212,181,106,.45);
+      animation: pulse 2.2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(.55);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1.8);
+        opacity: 0;
+      }
+    }
+
+    .place-card {
+      position: absolute;
+      left: 56%;
+      top: 49%;
+      width: 270px;
+      padding: 20px;
+      background: rgba(7,12,8,.82);
+      border: 1px solid rgba(255,255,255,.15);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 30px 80px rgba(0,0,0,.45);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: .25s ease;
+      z-index: 5;
+    }
+
+    .pin.visited:hover + .place-card,
+    .place-card:hover {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .place-card h2 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: .08em;
+    }
+
+    .place-card p {
+      margin: 6px 0;
+      color: rgba(244,239,228,.72);
+      font-size: 13px;
+    }
+
+    .place-card a {
+      display: inline-block;
+      margin-top: 14px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: .12em;
+    }
+
+    .legend {
+      position: fixed;
+      right: 54px;
+      bottom: 38px;
+      display: flex;
+      gap: 18px;
+      font-size: 11px;
+      letter-spacing: .12em;
+      color: rgba(244,239,228,.6);
+      z-index: 10;
+    }
+
+    .legend span::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: rgba(244,239,228,.35);
+    }
+
+    .legend .visited::before {
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(212,181,106,.9);
+    }
+
+    @media (max-width: 1200px) {
+      .page {
+        grid-template-columns: 30% 70%;
+        padding: 54px 64px;
+      }
+
+      .title-area {
+        padding-top: 0;
+      }
+
+      .explore {
+        margin-top: 24px;
+        padding-bottom: 48px;
+      }
+
+      .explore-links {
+        gap: 3px;
+      }
+
+      .explore-links a {
+        min-height: 32px;
+        padding: 4px 0 6px;
+        font-size: 13px;
+      }
+
+      .progress {
+        margin-top: 22px;
+        font-size: 48px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      body {
+        height: auto;
+        overflow-y: auto;
+      }
+
+      .page {
+        height: auto;
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        padding: 32px 22px 110px;
+      }
+
+      .title-area {
+        padding-top: 0;
+        max-width: none;
+      }
+
+      h1 {
+        white-space: normal;
+      }
+
+      .subtitle-en {
+        white-space: normal;
+      }
+
+      .map-area {
+        width: 100%;
+        transform: none;
+      }
+
+      .legend {
+        right: 22px;
+        bottom: 30px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <main class="page">
+    <section class="title-area">
+      <div class="kicker">FIELD NOTES / PHOTOS / SOUND</div>
 
-    <h1>花の百名山アーカイブ</h1>
+      <h1>新・花の百名山</h1>
 
-    <p>花・音・写真・フィールドノートを記録する</p>
+      <p class="subtitle">
+        <span class="subtitle-en">Field Notes of Japan's New 100 Flower Mountains</span>
+        音・写真・花のフィールドノート
+      </p>
 
-    <p>現在 1 / 100</p>
+      <div class="progress">1 <span>/ 100</span></div>
 
-    <h2>最新の記録</h2>
+      <nav class="explore" aria-label="アーカイブを辿る">
+        <div class="explore-title">EXPLORE BY</div>
 
-<p>
-<a href="records/Imo-wetland.html">葦毛湿原</a>
-</p>
+        <div class="explore-links">
+          <a href="archive/sound.html">音で辿る</a>
+          <a href="archive/photos.html">写真で辿る</a>
+          <a href="archive/flowers.html">花で辿る</a>
+          <a href="archive/regions.html">地域で辿る</a>
+          <a href="archive/memories.html">思い出で辿る</a>
+          <a href="archive/seasons.html">季節で辿る</a>
+        </div>
+      </nav>
+    </section>
+
+    <section class="map-area">
+      <img src="assets/japan-map.svg" alt="日本地図">
+
+      <a
+        class="pin visited"
+        style="left: 54.7%; top: 57.8%;"
+        href="records/Imo-wetland.html"
+        aria-label="葦毛湿原"
+      ></a>
+
+      <div class="place-card">
+        <h2>葦毛湿原</h2>
+        <p>2026.06.06</p>
+        <p>愛知県豊橋市</p>
+        <p>写真 8枚 / 録音 2件</p>
+        <a href="records/Imo-wetland.html">VIEW RECORD →</a>
+      </div>
+
+      <span class="pin" style="left: 44%; top: 20%;"></span>
+      <span class="pin" style="left: 49%; top: 40%;"></span>
+      <span class="pin" style="left: 54%; top: 52%;"></span>
+      <span class="pin" style="left: 50%; top: 63%;"></span>
+      <span class="pin" style="left: 38%; top: 77%;"></span>
+    </section>
+  </main>
+
+  <div class="legend">
+    <span class="visited">VISITED</span>
+    <span>UNVISITED</span>
+  </div>
+</body>
+</html>

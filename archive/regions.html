@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>地域で辿る｜新・花の百名山</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070907;
+      --text: #f4efe4;
+      --muted: rgba(244,239,228,.66);
+      --faint: rgba(244,239,228,.38);
+      --gold: #d4b56a;
+      --line: rgba(244,239,228,.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.93)),
+        url("../assets/background-autumn.png") center / cover fixed;
+      color: var(--text);
+      font-family: "IBM Plex Sans JP", sans-serif;
+      line-height: 1.9;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 64px 42px 110px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 54px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+    }
+
+    .hero {
+      margin-bottom: 76px;
+      max-width: 840px;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .26em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 88px);
+      font-weight: 600;
+      letter-spacing: .12em;
+      line-height: 1.08;
+    }
+
+    .lead {
+      margin-top: 26px;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 15px;
+      letter-spacing: .04em;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 26px;
+      color: var(--gold);
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: .18em;
+      font-weight: 500;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
+
+    .line-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      stroke: var(--gold);
+      stroke-width: 1.6;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: .92;
+    }
+
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .region-card {
+      min-height: 240px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .region-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,181,106,.48);
+      background:
+        linear-gradient(145deg, rgba(212,181,106,.08), rgba(255,255,255,.018));
+    }
+
+    .region-label {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .20em;
+      margin-bottom: 12px;
+    }
+
+    .region-card h2 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: .12em;
+    }
+
+    .region-meta {
+      margin-top: 12px;
+      color: var(--faint);
+      font-size: 12px;
+      letter-spacing: .10em;
+    }
+
+    .region-note {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .place-list {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(244,239,228,.12);
+    }
+
+    .place-list a {
+      display: block;
+      color: rgba(244,239,228,.82);
+      font-size: 14px;
+      letter-spacing: .08em;
+    }
+
+    .place-list a:hover {
+      color: var(--gold);
+    }
+
+    .empty {
+      color: rgba(244,239,228,.36);
+      font-size: 13px;
+      letter-spacing: .08em;
+    }
+
+    .credit {
+      margin-top: 90px;
+      color: rgba(244,239,228,.36);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .region-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding: 38px 22px 86px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <a class="back" href="../index.html">← MAPへ戻る</a>
+
+    <header class="hero">
+      <div class="kicker">EXPLORE BY REGION</div>
+      <h1>地域で辿る</h1>
+
+      <p class="lead">
+        記録地を地域ごとに辿るページ。
+        北から南へ、または自分の生活圏から遠くへ広がっていくように、訪問の軌跡を整理する。
+      </p>
+    </header>
+
+    <section>
+      <div class="section-title">
+        <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6l5-2 6 2 5-2v14l-5 2-6-2-5 2V6z"></path>
+          <path d="M9 4v14"></path>
+          <path d="M15 6v14"></path>
+        </svg>
+        <h2>REGION ARCHIVE</h2>
+      </div>
+
+      <div class="region-grid">
+        <article class="region-card">
+          <div>
+            <div class="region-label">REGION 01</div>
+            <h2>北海道</h2>
+            <p class="region-meta">HOKKAIDO</p>
+            <p class="region-note">北の山と湿原、花の季節を記録していく地域。</p>
+          </div>
+          <div class="place-list">
+            <span class="empty">NO RECORD YET</span>
+          </div>
+        </article>
+
+        <article class="region-card">
+          <div>
+            <div class="region-label">REGION 02</div>
+            <h2>東北</h2>
+            <p class="region-meta">TOHOKU</p>
+            <p class="region-note">雪解け、湿原、高山植物の記録を増やしていく地域。</p>
+          </div>
+          <div class="place-list">
+            <span class="empty">NO RECORD YET</span>
+          </div>
+        </article>
+
+        <article class="region-card">
+          <div>
+            <div class="region-label">REGION 03</div>
+            <h2>関東</h2>
+            <p class="region-meta">KANTO</p>
+            <p class="region-note">都市圏から向かう山と花の記録。</p>
+          </div>
+          <div class="place-list">
+            <span class="empty">NO RECORD YET</span>
+          </div>
+        </article>
+
+        <article class="region-card">
+          <div>
+            <div class="region-label">REGION 04</div>
+            <h2>中部</h2>
+            <p class="region-meta">CHUBU</p>
+            <p class="region-note">現在の記録が始まった地域。湿原、山、森の記録。</p>
+          </div>
+          <div class="place-list">
+            <a href="../records/Imo-wetland.html">葦毛湿原 →</a>
+          </div>
+        </article>
+
+        <article class="region-card">
+          <div>
+            <div class="region-label">REGION 05</div>
+            <h2>近畿</h2>
+            <p class="region-meta">KINKI</p>
+            <p class="region-note">関西圏から辿る山と花の記録。</p>
+          </div>
+          <div class="place-list">
+            <span class="empty">NO RECORD YET</span>
+          </div>
+        </article>
+
+        <article class="region-card">
+          <div>
+            <div class="region-label">REGION 06</div>
+            <h2>中国・四国</h2>
+            <p class="region-meta">CHUGOKU / SHIKOKU</p>
+            <p class="region-note">瀬戸内、山地、島の気配を含む地域。</p>
+          </div>
+          <div class="place-list">
+            <span class="empty">NO RECORD YET</span>
+          </div>
+        </article>
+
+        <article class="region-card">
+          <div>
+            <div class="region-label">REGION 07</div>
+            <h2>九州</h2>
+            <p class="region-meta">KYUSHU</p>
+            <p class="region-note">火山、草原、南の植物を記録していく地域。</p>
+          </div>
+          <div class="place-list">
+            <span class="empty">NO RECORD YET</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="credit">© 2026 MAKOTO TAKEDA / FLOWER MOUNTAIN FIELD ARCHIVE</div>
+  </main>
+</body>
+</html>

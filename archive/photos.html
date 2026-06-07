@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>写真で辿る｜新・花の百名山</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070907;
+      --text: #f4efe4;
+      --muted: rgba(244,239,228,.66);
+      --faint: rgba(244,239,228,.38);
+      --gold: #d4b56a;
+      --line: rgba(244,239,228,.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.93)),
+        url("../assets/background-autumn.png") center / cover fixed;
+      color: var(--text);
+      font-family: "IBM Plex Sans JP", sans-serif;
+      line-height: 1.9;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 64px 42px 110px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 54px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+    }
+
+    .hero {
+      margin-bottom: 76px;
+      max-width: 840px;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .26em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 88px);
+      font-weight: 600;
+      letter-spacing: .12em;
+      line-height: 1.08;
+    }
+
+    .lead {
+      margin-top: 26px;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 15px;
+      letter-spacing: .04em;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 26px;
+      color: var(--gold);
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: .18em;
+      font-weight: 500;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
+
+    .line-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      stroke: var(--gold);
+      stroke-width: 1.6;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: .92;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .photo-card {
+      position: relative;
+      display: block;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease, opacity .4s ease;
+    }
+
+    .photo-card:hover img {
+      transform: scale(1.045);
+      opacity: .82;
+    }
+
+    .photo-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(transparent 45%, rgba(0,0,0,.78));
+      pointer-events: none;
+    }
+
+    .caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      z-index: 1;
+    }
+
+    .caption strong {
+      display: block;
+      font-size: 15px;
+      letter-spacing: .10em;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .caption span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(244,239,228,.62);
+      font-size: 11px;
+      letter-spacing: .12em;
+    }
+
+    .credit {
+      margin-top: 90px;
+      color: rgba(244,239,228,.36);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding: 38px 22px 86px;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <a class="back" href="../index.html">← MAPへ戻る</a>
+
+    <header class="hero">
+      <div class="kicker">EXPLORE BY PHOTOS</div>
+      <h1>写真で辿る</h1>
+
+      <p class="lead">
+        各地で撮影した写真から、記録地を辿るページ。
+        風景、足元、植物、道具、現地で見つけたものを、写真の断片として並べる。
+      </p>
+    </header>
+
+    <section>
+      <div class="section-title">
+        <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="5" width="16" height="14" rx="1.5"></rect>
+          <circle cx="9" cy="10" r="1.5"></circle>
+          <path d="M4 16l5-4 4 3 3-2 4 3"></path>
+        </svg>
+        <h2>PHOTO ARCHIVE</h2>
+      </div>
+
+      <div class="photo-grid">
+        <a class="photo-card" href="../records/Imo-wetland.html">
+          <img src="../photos/Imo-wetland/photo-03.JPG" alt="葦毛湿原 写真3">
+          <div class="caption">
+            <strong>葦毛湿原</strong>
+            <span>2026.06.06 / AICHI</span>
+          </div>
+        </a>
+
+        <a class="photo-card" href="../records/Imo-wetland.html">
+          <img src="../photos/Imo-wetland/photo-04.JPG" alt="葦毛湿原 写真4">
+          <div class="caption">
+            <strong>葦毛湿原</strong>
+            <span>2026.06.06 / AICHI</span>
+          </div>
+        </a>
+
+        <a class="photo-card" href="../records/Imo-wetland.html">
+          <img src="../photos/Imo-wetland/photo-05.JPG" alt="葦毛湿原 写真5">
+          <div class="caption">
+            <strong>葦毛湿原</strong>
+            <span>2026.06.06 / AICHI</span>
+          </div>
+        </a>
+
+        <a class="photo-card" href="../records/Imo-wetland.html">
+          <img src="../photos/Imo-wetland/photo-06.JPG" alt="葦毛湿原 写真6">
+          <div class="caption">
+            <strong>葦毛湿原</strong>
+            <span>2026.06.06 / AICHI</span>
+          </div>
+        </a>
+
+        <a class="photo-card" href="../records/Imo-wetland.html">
+          <img src="../photos/Imo-wetland/photo-07.JPG" alt="葦毛湿原 写真7">
+          <div class="caption">
+            <strong>葦毛湿原</strong>
+            <span>2026.06.06 / AICHI</span>
+          </div>
+        </a>
+
+        <a class="photo-card" href="../records/Imo-wetland.html">
+          <img src="../photos/Imo-wetland/photo-08.JPG" alt="葦毛湿原 写真8">
+          <div class="caption">
+            <strong>葦毛湿原</strong>
+            <span>2026.06.06 / AICHI</span>
+          </div>
+        </a>
+
+        <a class="photo-card" href="../records/Imo-wetland.html">
+          <img src="../photos/Imo-wetland/photo-02.JPG" alt="葦毛湿原 写真2">
+          <div class="caption">
+            <strong>葦毛湿原</strong>
+            <span>2026.06.06 / AICHI</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div class="credit">© 2026 MAKOTO TAKEDA / FLOWER MOUNTAIN FIELD ARCHIVE</div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>花で辿る｜新・花の百名山</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070907;
+      --text: #f4efe4;
+      --muted: rgba(244,239,228,.66);
+      --faint: rgba(244,239,228,.38);
+      --gold: #d4b56a;
+      --line: rgba(244,239,228,.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.93)),
+        url("../assets/background-autumn.png") center / cover fixed;
+      color: var(--text);
+      font-family: "IBM Plex Sans JP", sans-serif;
+      line-height: 1.9;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 64px 42px 110px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 54px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+    }
+
+    .hero {
+      margin-bottom: 76px;
+      max-width: 840px;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .26em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 88px);
+      font-weight: 600;
+      letter-spacing: .12em;
+      line-height: 1.08;
+    }
+
+    .lead {
+      margin-top: 26px;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 15px;
+      letter-spacing: .04em;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 26px;
+      color: var(--gold);
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 17px;
+      letter-spacing: .18em;
+      font-weight: 500;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
+
+    .line-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      stroke: var(--gold);
+      stroke-width: 1.6;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: .92;
+    }
+
+    .flower-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .flower-card {
+      display: grid;
+      grid-template-rows: 260px auto;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+      overflow: hidden;
+    }
+
+    .flower-image {
+      position: relative;
+      background: url("../photos/Imo-wetland/photo-05.JPG") center / cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .flower-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(transparent 40%, rgba(0,0,0,.68));
+    }
+
+    .flower-body {
+      padding: 22px;
+    }
+
+    .flower-label {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .20em;
+      margin-bottom: 10px;
+    }
+
+    .flower-body h2 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: .10em;
+    }
+
+    .flower-meta {
+      margin: 0 0 18px;
+      color: var(--faint);
+      font-size: 12px;
+      letter-spacing: .10em;
+    }
+
+    .flower-note {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .record-link {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .14em;
+    }
+
+    .empty-note {
+      margin-top: 40px;
+      padding: 24px;
+      border: 1px dashed rgba(244,239,228,.22);
+      color: rgba(244,239,228,.55);
+      font-size: 14px;
+      letter-spacing: .04em;
+    }
+
+    .credit {
+      margin-top: 90px;
+      color: rgba(244,239,228,.36);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .flower-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flower-card {
+        grid-template-rows: 320px auto;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding: 38px 22px 86px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <a class="back" href="../index.html">← MAPへ戻る</a>
+
+    <header class="hero">
+      <div class="kicker">EXPLORE BY FLOWERS</div>
+      <h1>花で辿る</h1>
+
+      <p class="lead">
+        各地で出会った花や植物を辿るページ。
+        名前がわからないものも、まずは「見つけたもの」として残し、あとから少しずつ調べていく。
+      </p>
+    </header>
+
+    <section>
+      <div class="section-title">
+        <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 21c0-5 0-10 0-15"></path>
+          <path d="M12 8c-4-4-8-2-8 2 4 1 6 0 8-2z"></path>
+          <path d="M12 8c4-4 8-2 8 2-4 1-6 0-8-2z"></path>
+          <path d="M12 13c-3-2-6-1-7 2 3 1 5 .5 7-2z"></path>
+          <path d="M12 13c3-2 6-1 7 2-3 1-5 .5-7-2z"></path>
+        </svg>
+        <h2>FLOWER / PLANT ARCHIVE</h2>
+      </div>
+
+      <div class="flower-grid">
+        <article class="flower-card">
+          <div class="flower-image" aria-label="葦毛湿原で見つけた植物"></div>
+
+          <div class="flower-body">
+            <div class="flower-label">PLANT RECORD 001</div>
+            <h2>葦毛湿原の植物</h2>
+            <p class="flower-meta">2026.06.06 / AICHI, TOYOHASHI</p>
+
+            <p class="flower-note">
+              湿原で見つけた植物の記録。名前がわからないものも含めて、写真と場所を先に残しておく。
+            </p>
+
+            <a class="record-link" href="../records/Imo-wetland.html">VIEW PLACE RECORD →</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="empty-note">
+        花や植物の名前がわかってきたら、このページに「花の名前」「見た場所」「季節」「写真」を追加していく。
+        最初は未同定のままでよい。
+      </div>
+    </section>
+
+    <div class="credit">© 2026 MAKOTO TAKEDA / FLOWER MOUNTAIN FIELD ARCHIVE</div>
+  </main>
+</body>
+</html>
