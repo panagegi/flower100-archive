@@ -15,6 +15,7 @@
       --muted: rgba(244,239,228,.66);
       --gold: #d4b56a;
       --line: rgba(244,239,228,.16);
+      --panel: rgba(7,12,8,.84);
     }
 
     * {
@@ -39,8 +40,8 @@
       display: grid;
       grid-template-columns: 28% 72%;
       align-items: center;
-      gap: 34px;
-      padding: 72px 84px;
+      gap: 24px;
+      padding: 72px 72px 72px 84px;
     }
 
     .title-area {
@@ -156,46 +157,152 @@
 
     .map-area {
       position: relative;
-      width: min(72vw, 1060px);
+      width: min(72vw, 1120px);
       margin-left: auto;
-      transform: translateY(-4px);
+      margin-right: 0;
+      transform: translate(-24px, -8px);
     }
 
     .map-area img {
       width: 100%;
       display: block;
       filter: invert(1) brightness(1.35) opacity(.72);
+      pointer-events: none;
     }
+
+    .map-pins {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+    }
+
+    .map-controls {
+  position: absolute;
+  left: 63%;
+  top: 55%;
+  z-index: 8;
+  width: 340px;
+  max-width: 38vw;
+  padding: 0;
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
+}
+
+    .season-filter-title {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: .22em;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(212,181,106,.42);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+   .filter-button {
+  appearance: none;
+  border: none;
+  border-bottom: 1px solid rgba(244,239,228,.24);
+  background: transparent;
+  color: rgba(244,239,228,.66);
+  padding: 4px 0 5px;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: .12em;
+  cursor: pointer;
+  transition:
+    color .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+    .filter-button:hover {
+      color: var(--gold);
+      border-color: rgba(212,181,106,.48);
+      transform: translateY(-1px);
+    }
+
+.filter-button.active {
+  color: var(--gold);
+  background: transparent;
+  border-color: var(--gold);
+}
+
+.filter-note {
+  margin-top: 12px;
+  color: rgba(244,239,228,.42);
+  font-size: 10px;
+  line-height: 1.65;
+  letter-spacing: .04em;
+  white-space: normal;
+}
 
     .pin {
       position: absolute;
-      width: 11px;
-      height: 11px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      background: rgba(244,239,228,.38);
-      border: 1px solid rgba(244,239,228,.4);
+      background: rgba(244,239,228,.32);
+      border: 1px solid rgba(244,239,228,.38);
       cursor: pointer;
+      transition:
+        opacity .2s ease,
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .pin:hover {
+      transform: translate(-50%, -50%) scale(1.7);
+      z-index: 6;
     }
 
     .pin.visited {
-      width: 15px;
-      height: 15px;
+      width: 12px;
+      height: 12px;
       background: var(--gold);
       border: none;
       box-shadow:
-        0 0 0 6px rgba(212,181,106,.16),
-        0 0 26px rgba(212,181,106,.9);
-      z-index: 3;
+        0 0 0 5px rgba(212,181,106,.15),
+        0 0 22px rgba(212,181,106,.85);
+      z-index: 5;
     }
 
     .pin.visited::after {
       content: "";
       position: absolute;
-      inset: -14px;
+      inset: -12px;
       border-radius: 50%;
       border: 1px solid rgba(212,181,106,.45);
       animation: pulse 2.2s infinite;
+    }
+
+    .pin.best-season {
+      width: 9px;
+      height: 9px;
+      background: var(--gold);
+      border-color: var(--gold);
+      box-shadow:
+        0 0 0 4px rgba(212,181,106,.12),
+        0 0 16px rgba(212,181,106,.62);
+    }
+
+    .pin.good-season {
+      background: rgba(212,181,106,.45);
+      border-color: rgba(212,181,106,.65);
+    }
+
+    .pin.hidden {
+      opacity: .06;
+      pointer-events: none;
     }
 
     @keyframes pulse {
@@ -214,9 +321,9 @@
       position: absolute;
       left: 56%;
       top: 49%;
-      width: 270px;
+      width: 280px;
       padding: 20px;
-      background: rgba(7,12,8,.82);
+      background: var(--panel);
       border: 1px solid rgba(255,255,255,.15);
       backdrop-filter: blur(18px);
       box-shadow: 0 30px 80px rgba(0,0,0,.45);
@@ -224,14 +331,20 @@
       pointer-events: none;
       transform: translateY(8px);
       transition: .25s ease;
-      z-index: 5;
+      z-index: 9;
     }
 
-    .pin.visited:hover + .place-card,
-    .place-card:hover {
+    .place-card.visible {
       opacity: 1;
       pointer-events: auto;
       transform: translateY(0);
+    }
+
+    .place-card .card-label {
+      margin-bottom: 8px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: .2em;
     }
 
     .place-card h2 {
@@ -245,6 +358,7 @@
       margin: 6px 0;
       color: rgba(244,239,228,.72);
       font-size: 13px;
+      line-height: 1.55;
     }
 
     .place-card a {
@@ -271,8 +385,8 @@
     .legend span::before {
       content: "";
       display: inline-block;
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       margin-right: 8px;
       border-radius: 50%;
       background: rgba(244,239,228,.35);
@@ -286,7 +400,7 @@
     @media (max-width: 1200px) {
       .page {
         grid-template-columns: 30% 70%;
-        padding: 54px 64px;
+        padding: 54px 54px 54px 64px;
       }
 
       .title-area {
@@ -345,9 +459,20 @@
         transform: none;
       }
 
+      .map-controls {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        max-width: none;
+        margin-bottom: 18px;
+      }
+
       .legend {
         right: 22px;
         bottom: 30px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
     }
   </style>
@@ -365,7 +490,9 @@
         音・写真・花のフィールドノート
       </p>
 
-      <div class="progress">1 <span>/ 100</span></div>
+      <div class="progress">
+        <span id="visited-count">1</span> <span>/ 100</span>
+      </div>
 
       <nav class="explore" aria-label="アーカイブを辿る">
         <div class="explore-title">EXPLORE BY</div>
@@ -381,29 +508,29 @@
       </nav>
     </section>
 
-    <section class="map-area">
-      <img src="assets/japan-map.svg" alt="日本地図">
+    <section class="map-area" aria-label="新・花の百名山 地図">
+      <div class="map-controls" aria-label="季節で地図を絞り込む">
+        <div class="season-filter-title">FILTER BY SEASON</div>
 
-      <a
-        class="pin visited"
-        style="left: 54.7%; top: 57.8%;"
-        href="records/Imo-wetland.html"
-        aria-label="葦毛湿原"
-      ></a>
+        <div class="filter-buttons">
+          <button class="filter-button active" type="button" data-filter="all">ALL</button>
+          <button class="filter-button" type="button" data-filter="spring">春</button>
+          <button class="filter-button" type="button" data-filter="summer">夏</button>
+          <button class="filter-button" type="button" data-filter="autumn">秋</button>
+          <button class="filter-button" type="button" data-filter="winter">冬</button>
+          <button class="filter-button" type="button" data-filter="visited">訪問済み</button>
+        </div>
 
-      <div class="place-card">
-        <h2>葦毛湿原</h2>
-        <p>2026.06.06</p>
-        <p>愛知県豊橋市</p>
-        <p>写真 8枚 / 録音 2件</p>
-        <a href="records/Imo-wetland.html">VIEW RECORD →</a>
+        <div class="filter-note">
+          金色はベストシーズン、淡い金色はその季節でも楽しめる地点。
+        </div>
       </div>
 
-      <span class="pin" style="left: 44%; top: 20%;"></span>
-      <span class="pin" style="left: 49%; top: 40%;"></span>
-      <span class="pin" style="left: 54%; top: 52%;"></span>
-      <span class="pin" style="left: 50%; top: 63%;"></span>
-      <span class="pin" style="left: 38%; top: 77%;"></span>
+      <img src="assets/japan-map.svg" alt="日本地図">
+
+      <div class="map-pins" id="map-pins"></div>
+
+      <div class="place-card" id="place-card" aria-live="polite"></div>
     </section>
   </main>
 
@@ -411,5 +538,198 @@
     <span class="visited">VISITED</span>
     <span>UNVISITED</span>
   </div>
+
+  <script src="data/mountains.js"></script>
+
+  <script>
+    const monthBySeason = {
+      spring: [3, 4, 5],
+      summer: [6, 7, 8],
+      autumn: [9, 10, 11],
+      winter: [12, 1, 2]
+    };
+
+    const pinsContainer = document.getElementById("map-pins");
+    const placeCard = document.getElementById("place-card");
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const visitedCount = document.getElementById("visited-count");
+
+    function monthLabel(months) {
+      if (!months || months.length === 0) {
+        return "未設定";
+      }
+
+      return months
+        .slice()
+        .sort((a, b) => a - b)
+        .map((month) => `${month}月`)
+        .join("・");
+    }
+
+    function getDisplayName(mountain) {
+      return mountain.displayName || mountain.name;
+    }
+
+    function getMapPosition(mountain) {
+      return {
+        left: mountain.mapX,
+        top: mountain.mapY
+      };
+    }
+
+    function isBestSeason(mountain, season) {
+      if (season === "all" || season === "visited") {
+        return false;
+      }
+
+      const months = monthBySeason[season] || [];
+      return mountain.bestMonths?.some((month) => months.includes(month));
+    }
+
+    function isGoodSeason(mountain, season) {
+      if (season === "all" || season === "visited") {
+        return false;
+      }
+
+      const months = monthBySeason[season] || [];
+      return mountain.goodMonths?.some((month) => months.includes(month));
+    }
+
+    function shouldShowMountain(mountain, filter) {
+      if (filter === "all") {
+        return true;
+      }
+
+      if (filter === "visited") {
+        return mountain.visited;
+      }
+
+      return isBestSeason(mountain, filter) || isGoodSeason(mountain, filter);
+    }
+
+    function showPlaceCard(mountain) {
+      const position = getMapPosition(mountain);
+      const cardLeft = Math.min(Math.max(position.left + 2, 8), 68);
+      const cardTop = Math.min(Math.max(position.top - 4, 8), 72);
+
+      placeCard.style.left = `${cardLeft}%`;
+      placeCard.style.top = `${cardTop}%`;
+
+      const flowers = mountain.flowers?.join(" / ") || "未設定";
+      const prefectures = mountain.prefectures?.join("・") || "未設定";
+      const bestMonths = monthLabel(mountain.bestMonths);
+      const goodMonths = monthLabel(mountain.goodMonths);
+      const name = getDisplayName(mountain);
+
+      const linkHtml = mountain.recordUrl
+        ? `<a href="${mountain.recordUrl}">VIEW RECORD →</a>`
+        : "";
+
+      placeCard.innerHTML = `
+        <div class="card-label">NO. ${mountain.no} / ${mountain.region}</div>
+        <h2>${name}</h2>
+        <p>${mountain.name !== name ? mountain.name : ""}</p>
+        <p>${prefectures}</p>
+        <p>標高 ${mountain.elevation}m</p>
+        <p>花：${flowers}</p>
+        <p>BEST：${bestMonths}</p>
+        <p>GOOD：${goodMonths}</p>
+        ${linkHtml}
+      `;
+
+      placeCard.classList.add("visible");
+    }
+
+    function hidePlaceCard() {
+      placeCard.classList.remove("visible");
+    }
+
+    function createPin(mountain) {
+      const position = getMapPosition(mountain);
+      const pin = document.createElement(mountain.recordUrl ? "a" : "span");
+
+      pin.classList.add("pin");
+
+      if (mountain.visited) {
+        pin.classList.add("visited");
+      }
+
+      pin.style.left = `${position.left}%`;
+      pin.style.top = `${position.top}%`;
+      pin.dataset.id = mountain.id;
+      pin.setAttribute("aria-label", getDisplayName(mountain));
+
+      if (mountain.recordUrl) {
+        pin.href = mountain.recordUrl;
+      }
+
+      pin.addEventListener("mouseenter", () => {
+        showPlaceCard(mountain);
+      });
+
+      pin.addEventListener("focus", () => {
+        showPlaceCard(mountain);
+      });
+
+      pin.addEventListener("mouseleave", () => {
+        hidePlaceCard();
+      });
+
+      pin.addEventListener("blur", () => {
+        hidePlaceCard();
+      });
+
+      return pin;
+    }
+
+    function updateFilter(filter) {
+      filterButtons.forEach((button) => {
+        button.classList.toggle("active", button.dataset.filter === filter);
+      });
+
+      const pins = document.querySelectorAll(".pin");
+
+      MOUNTAINS.forEach((mountain, index) => {
+        const pin = pins[index];
+        const visible = shouldShowMountain(mountain, filter);
+
+        pin.classList.toggle("hidden", !visible);
+        pin.classList.remove("best-season", "good-season");
+
+        if (visible && isBestSeason(mountain, filter)) {
+          pin.classList.add("best-season");
+        } else if (visible && isGoodSeason(mountain, filter)) {
+          pin.classList.add("good-season");
+        }
+      });
+
+      hidePlaceCard();
+    }
+
+    function renderPins() {
+      pinsContainer.innerHTML = "";
+
+      MOUNTAINS.forEach((mountain) => {
+        const pin = createPin(mountain);
+        pinsContainer.appendChild(pin);
+      });
+
+      updateFilter("all");
+    }
+
+    function updateVisitedCount() {
+      const count = MOUNTAINS.filter((mountain) => mountain.visited).length;
+      visitedCount.textContent = count;
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        updateFilter(button.dataset.filter);
+      });
+    });
+
+    updateVisitedCount();
+    renderPins();
+  </script>
 </body>
 </html>
