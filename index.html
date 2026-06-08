@@ -570,19 +570,53 @@
       return mountain.displayName || mountain.name;
     }
 
-    function hasMapPosition(mountain) {
-      return (
-        typeof mountain.mapX === "number" &&
-        typeof mountain.mapY === "number"
-      );
-    }
+function hasMapPosition(mountain) {
+  return true;
+}
 
-    function getMapPosition(mountain) {
-      return {
-        left: mountain.mapX,
-        top: mountain.mapY
-      };
-    }
+function getTemporaryPosition(mountain) {
+  const areaByRegion = {
+    "北海道": { x: 60, y: 9, width: 12, height: 16 },
+    "東北": { x: 56, y: 28, width: 10, height: 16 },
+    "関東": { x: 52, y: 45, width: 9, height: 11 },
+    "中部": { x: 42, y: 48, width: 16, height: 18 },
+    "近畿": { x: 34, y: 61, width: 10, height: 10 },
+    "中国": { x: 24, y: 64, width: 10, height: 8 },
+    "四国": { x: 26, y: 73, width: 8, height: 6 },
+    "九州": { x: 18, y: 79, width: 10, height: 12 }
+  };
+
+  const area = areaByRegion[mountain.region] || {
+    x: 45,
+    y: 50,
+    width: 10,
+    height: 10
+  };
+
+  const index = mountain.no - 1;
+  const columns = 5;
+  const col = index % columns;
+  const row = Math.floor(index / columns) % 5;
+
+  return {
+    left: area.x + (col / 4) * area.width,
+    top: area.y + (row / 4) * area.height
+  };
+}
+
+function getMapPosition(mountain) {
+  if (
+    typeof mountain.mapX === "number" &&
+    typeof mountain.mapY === "number"
+  ) {
+    return {
+      left: mountain.mapX,
+      top: mountain.mapY
+    };
+  }
+
+  return getTemporaryPosition(mountain);
+}
 
     function isBestSeason(mountain, season) {
       if (season === "all" || season === "visited") {
