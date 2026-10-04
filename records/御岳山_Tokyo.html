@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>御岳山｜花の百名山アーカイブ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070907;
+      --paper: #10140f;
+      --paper2: #141911;
+      --text: #f4f0e8;
+      --muted: rgba(244,240,232,.68);
+      --faint: rgba(244,240,232,.42);
+      --gold: #d9b765;
+      --line: rgba(244,240,232,.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans JP", sans-serif;
+      line-height: 1.9;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 76vh;
+      background:
+        linear-gradient(rgba(0,0,0,.10), rgba(0,0,0,.82)),
+        url("../photos/御岳山_Tokyo/DSC02877.JPG") center / cover;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 56px 72px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 72% 44%, rgba(217,183,101,.10), transparent 34%),
+        linear-gradient(270deg, rgba(0,0,0,.62), transparent 62%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(680px, 48vw);
+      text-align: left;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .26em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(44px, 7vw, 92px);
+      font-weight: 600;
+      letter-spacing: .12em;
+      line-height: 1.08;
+    }
+
+    .meta {
+      margin-top: 18px;
+      color: rgba(244,240,232,.82);
+      letter-spacing: .12em;
+      font-size: 14px;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 36px 38px 110px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 34px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.18fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 80px;
+    }
+
+    .archive-card {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+      border: 1px solid var(--line);
+      min-height: 420px;
+      overflow: hidden;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+      font-weight: 500;
+    }
+
+    .line-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      stroke: var(--gold);
+      stroke-width: 1.6;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: .92;
+    }
+
+    .field-image {
+      height: calc(100% - 58px);
+      min-height: 360px;
+      background: url("../photos/御岳山_Tokyo/DSC02885.JPG") center / cover;
+    }
+
+    .field-data-body {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .data-block-title {
+      color: rgba(244,240,232,.45);
+      font-size: 10px;
+      letter-spacing: .20em;
+      margin-bottom: 16px;
+    }
+
+    .data-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .data-row {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr);
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(244,240,232,.10);
+      font-size: 13px;
+    }
+
+    .data-row dt {
+      margin: 0;
+      color: rgba(244,240,232,.42);
+      letter-spacing: .08em;
+      font-size: 11px;
+    }
+
+    .data-row dd {
+      margin: 0;
+      color: rgba(244,240,232,.86);
+      overflow-wrap: anywhere;
+    }
+
+    .feel-list {
+      display: grid;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .feel-item strong {
+      display: block;
+      color: rgba(244,240,232,.46);
+      font-size: 10px;
+      letter-spacing: .18em;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .feel-item span {
+      color: rgba(244,240,232,.84);
+    }
+
+    .recording-body {
+      padding: 22px;
+    }
+
+    .recording-unit {
+      margin-bottom: 24px;
+    }
+
+    .recording-unit:last-child {
+      margin-bottom: 0;
+    }
+
+    .recording-unit h3 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      color: rgba(244,240,232,.78);
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    section {
+      margin: 82px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      color: var(--gold);
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: .18em;
+      font-weight: 500;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      margin-left: 8px;
+    }
+
+    .memo {
+      max-width: 780px;
+      font-size: 18px;
+      color: rgba(244,240,232,.86);
+    }
+
+    .field-kit {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .kit-photo {
+      min-height: 340px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(217,183,101,.10), rgba(255,255,255,.02));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(244,240,232,.38);
+      letter-spacing: .16em;
+      font-size: 12px;
+    }
+
+    .kit-note {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      padding: 28px;
+      color: rgba(244,240,232,.78);
+    }
+
+    .kit-note p {
+      margin: 0 0 1.3em;
+    }
+
+    .kit-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .gallery button {
+      appearance: none;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease, opacity .35s ease;
+    }
+
+    .gallery button:hover img {
+      transform: scale(1.045);
+      opacity: .86;
+    }
+
+    .sound-toggle {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 100;
+      padding: 12px 18px;
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(0,0,0,.72);
+      color: var(--text);
+      font-family: inherit;
+      letter-spacing: .12em;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+    }
+
+    .sound-toggle.playing {
+      color: var(--gold);
+      border-color: var(--gold);
+      box-shadow: 0 0 24px rgba(217,183,101,.24);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.88);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 34px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 88vh;
+      object-fit: contain;
+      box-shadow: 0 30px 100px rgba(0,0,0,.75);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      right: 28px;
+      top: 22px;
+      color: var(--text);
+      background: transparent;
+      border: 0;
+      font-size: 34px;
+      cursor: pointer;
+    }
+
+    .credit {
+      margin-top: 80px;
+      color: rgba(244,240,232,.36);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-align: right;
+    }
+
+    @media (max-width: 1050px) {
+      .hero {
+        justify-content: flex-start;
+      }
+
+      .hero-inner {
+        width: min(720px, 90vw);
+      }
+
+      .top-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .archive-card {
+        min-height: auto;
+      }
+
+      .field-image {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        min-height: 68vh;
+        padding: 34px 24px;
+      }
+
+      .page {
+        padding: 28px 22px 100px;
+      }
+
+      .field-data-body {
+        grid-template-columns: 1fr;
+      }
+
+      .field-kit {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">FIELD RECORD 003 / TOKYO</div>
+      <h1>御岳山</h1>
+      <p class="meta">2026.08.10（撮影日） / TOKYO</p>
+    </div>
+  </header>
+
+  <main class="page">
+    <a class="back" href="../index.html">← 花の百名山アーカイブへ戻る</a>
+
+    <section class="top-grid">
+      <article class="archive-card">
+        <div class="card-head">
+          <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="5" width="16" height="14" rx="1.5"></rect>
+            <circle cx="9" cy="10" r="1.5"></circle>
+            <path d="M4 16l5-4 4 3 3-2 4 3"></path>
+          </svg>
+          FIELD IMAGE
+        </div>
+        <div class="field-image" aria-label="御岳山の写真"></div>
+      </article>
+
+      <article class="archive-card">
+        <div class="card-head">
+          <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 4h14v16H5z"></path>
+            <path d="M8 8h8"></path>
+            <path d="M8 12h8"></path>
+            <path d="M8 16h5"></path>
+          </svg>
+          FIELD DATA
+        </div>
+
+        <div class="field-data-body">
+          <div>
+            <div class="data-block-title">RECORD DATA</div>
+
+            <dl class="data-list">
+              <div class="data-row">
+                <dt>ARCHIVE</dt>
+                <dd>003</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>PLACE</dt>
+                <dd>東京都 御岳山</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>HEIGHT</dt>
+                <dd>929m</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>DATE</dt>
+                <dd>2026.08.10（写真の撮影日）</dd>
+              </div>
+              <div class="data-row">
+                <dt>WEATHER</dt>
+                <dd>未記入</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>PHOTOS</dt>
+                <dd>78枚</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>SOUND</dt>
+                <dd>2件</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div>
+            <div class="data-block-title">WALK FEEL</div>
+
+            <div class="feel-list">
+              <div class="feel-item">
+                <strong>FOOTING</strong>
+                <span>未記入</span>
+              </div>
+
+              <div class="feel-item">
+                <strong>SOUND</strong>
+                <span>未記入</span>
+              </div>
+
+              <div class="feel-item">
+                <strong>HUMIDITY</strong>
+                <span>未記入</span>
+              </div>
+
+              <div class="feel-item">
+                <strong>IMPRESSION</strong>
+                <span>未記入</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="archive-card">
+        <div class="card-head">
+          <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 12h3l2-5 4 10 2-5h5"></path>
+            <circle cx="12" cy="12" r="9"></circle>
+          </svg>
+          FIELD RECORDING
+        </div>
+
+        <div class="recording-body">
+          <div class="recording-unit">
+            <h3>FIELD RECORDING 01</h3>
+            <p style="font-size:13px;overflow-wrap:anywhere">御岳山　じゅんにカメラの使い方教える / 7:40</p>
+            <audio controls preload="none" aria-label="御岳山　じゅんにカメラの使い方教える" src="../recordings/Mt.%20Mitake/%E5%BE%A1%E5%B2%B3%E5%B1%B1%E3%80%80%E3%81%97%E3%82%99%E3%82%85%E3%82%93%E3%81%AB%E3%82%AB%E3%83%A1%E3%83%A9%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9%E6%95%99%E3%81%88%E3%82%8B.m4a">音声の再生に対応したブラウザでご覧ください。</audio>
+          </div>
+          <div class="recording-unit">
+            <h3>FIELD RECORDING 02</h3>
+            <p style="font-size:13px;overflow-wrap:anywhere">御岳山　純 / 2:44</p>
+            <audio controls preload="none" aria-label="御岳山　純" src="../recordings/Mt.%20Mitake/%E5%BE%A1%E5%B2%B3%E5%B1%B1%E3%80%80%E7%B4%94.m4a">音声の再生に対応したブラウザでご覧ください。</audio>
+          </div>
+          <a href="../archive/sound.html">音のアーカイブへ →</a>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 19l3.5-1 9-9a2.1 2.1 0 0 0-3-3l-9 9L5 19z"></path>
+          <path d="M13.5 6.5l4 4"></path>
+        </svg>
+        <h2>HIKE MEMO</h2>
+      </div>
+
+      <p class="memo">
+        この日のメモは、これから書き足していく。
+      </p>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 7h12l1 13H5L6 7z"></path>
+          <path d="M9 7a3 3 0 0 1 6 0"></path>
+          <path d="M8 12h8"></path>
+        </svg>
+        <h2>FIELD KIT</h2>
+      </div>
+
+      <div class="field-kit">
+        <div class="kit-photo">
+          FIELD KIT PHOTO
+        </div>
+
+        <div class="kit-note"><p>この日の装備の写真とメモは、まだ追加されていません。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="5" width="16" height="14" rx="1.5"></rect>
+          <path d="M8 9h.01"></path>
+          <path d="M4 16l5-4 4 3 3-2 4 3"></path>
+        </svg>
+        <h2>PHOTOS</h2>
+      </div>
+
+      <div class="gallery">
+        <button type="button" aria-label="御岳山 写真1を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02846.JPG" data-full="../photos/御岳山_Tokyo/DSC02846.JPG" alt="御岳山 写真1 / DSC02846.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真2を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02847.JPG" data-full="../photos/御岳山_Tokyo/DSC02847.JPG" alt="御岳山 写真2 / DSC02847.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真3を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02848.JPG" data-full="../photos/御岳山_Tokyo/DSC02848.JPG" alt="御岳山 写真3 / DSC02848.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真4を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02849.JPG" data-full="../photos/御岳山_Tokyo/DSC02849.JPG" alt="御岳山 写真4 / DSC02849.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真5を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02850.JPG" data-full="../photos/御岳山_Tokyo/DSC02850.JPG" alt="御岳山 写真5 / DSC02850.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真6を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02851.JPG" data-full="../photos/御岳山_Tokyo/DSC02851.JPG" alt="御岳山 写真6 / DSC02851.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真7を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02852.JPG" data-full="../photos/御岳山_Tokyo/DSC02852.JPG" alt="御岳山 写真7 / DSC02852.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真8を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02853.JPG" data-full="../photos/御岳山_Tokyo/DSC02853.JPG" alt="御岳山 写真8 / DSC02853.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真9を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02854.JPG" data-full="../photos/御岳山_Tokyo/DSC02854.JPG" alt="御岳山 写真9 / DSC02854.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真10を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02855.JPG" data-full="../photos/御岳山_Tokyo/DSC02855.JPG" alt="御岳山 写真10 / DSC02855.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真11を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02856.JPG" data-full="../photos/御岳山_Tokyo/DSC02856.JPG" alt="御岳山 写真11 / DSC02856.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真12を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02857.JPG" data-full="../photos/御岳山_Tokyo/DSC02857.JPG" alt="御岳山 写真12 / DSC02857.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真13を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02858.JPG" data-full="../photos/御岳山_Tokyo/DSC02858.JPG" alt="御岳山 写真13 / DSC02858.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真14を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02859.JPG" data-full="../photos/御岳山_Tokyo/DSC02859.JPG" alt="御岳山 写真14 / DSC02859.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真15を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02860.JPG" data-full="../photos/御岳山_Tokyo/DSC02860.JPG" alt="御岳山 写真15 / DSC02860.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真16を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02861.JPG" data-full="../photos/御岳山_Tokyo/DSC02861.JPG" alt="御岳山 写真16 / DSC02861.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真17を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02862.JPG" data-full="../photos/御岳山_Tokyo/DSC02862.JPG" alt="御岳山 写真17 / DSC02862.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真18を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02863.JPG" data-full="../photos/御岳山_Tokyo/DSC02863.JPG" alt="御岳山 写真18 / DSC02863.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真19を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02864.JPG" data-full="../photos/御岳山_Tokyo/DSC02864.JPG" alt="御岳山 写真19 / DSC02864.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真20を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02865.JPG" data-full="../photos/御岳山_Tokyo/DSC02865.JPG" alt="御岳山 写真20 / DSC02865.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真21を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02866.JPG" data-full="../photos/御岳山_Tokyo/DSC02866.JPG" alt="御岳山 写真21 / DSC02866.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真22を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02867.JPG" data-full="../photos/御岳山_Tokyo/DSC02867.JPG" alt="御岳山 写真22 / DSC02867.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真23を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02868.JPG" data-full="../photos/御岳山_Tokyo/DSC02868.JPG" alt="御岳山 写真23 / DSC02868.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真24を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02869.JPG" data-full="../photos/御岳山_Tokyo/DSC02869.JPG" alt="御岳山 写真24 / DSC02869.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真25を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02870.JPG" data-full="../photos/御岳山_Tokyo/DSC02870.JPG" alt="御岳山 写真25 / DSC02870.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真26を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02871.JPG" data-full="../photos/御岳山_Tokyo/DSC02871.JPG" alt="御岳山 写真26 / DSC02871.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真27を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02872.JPG" data-full="../photos/御岳山_Tokyo/DSC02872.JPG" alt="御岳山 写真27 / DSC02872.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真28を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02873.JPG" data-full="../photos/御岳山_Tokyo/DSC02873.JPG" alt="御岳山 写真28 / DSC02873.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真29を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02874.JPG" data-full="../photos/御岳山_Tokyo/DSC02874.JPG" alt="御岳山 写真29 / DSC02874.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真30を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02875.JPG" data-full="../photos/御岳山_Tokyo/DSC02875.JPG" alt="御岳山 写真30 / DSC02875.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真31を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02876.JPG" data-full="../photos/御岳山_Tokyo/DSC02876.JPG" alt="御岳山 写真31 / DSC02876.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真32を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02877.JPG" data-full="../photos/御岳山_Tokyo/DSC02877.JPG" alt="御岳山 写真32 / DSC02877.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真33を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02878.JPG" data-full="../photos/御岳山_Tokyo/DSC02878.JPG" alt="御岳山 写真33 / DSC02878.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真34を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02879.JPG" data-full="../photos/御岳山_Tokyo/DSC02879.JPG" alt="御岳山 写真34 / DSC02879.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真35を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02880.JPG" data-full="../photos/御岳山_Tokyo/DSC02880.JPG" alt="御岳山 写真35 / DSC02880.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真36を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02881.JPG" data-full="../photos/御岳山_Tokyo/DSC02881.JPG" alt="御岳山 写真36 / DSC02881.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真37を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02882.JPG" data-full="../photos/御岳山_Tokyo/DSC02882.JPG" alt="御岳山 写真37 / DSC02882.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真38を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02883.JPG" data-full="../photos/御岳山_Tokyo/DSC02883.JPG" alt="御岳山 写真38 / DSC02883.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真39を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02884.JPG" data-full="../photos/御岳山_Tokyo/DSC02884.JPG" alt="御岳山 写真39 / DSC02884.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真40を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02885.JPG" data-full="../photos/御岳山_Tokyo/DSC02885.JPG" alt="御岳山 写真40 / DSC02885.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真41を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02886.JPG" data-full="../photos/御岳山_Tokyo/DSC02886.JPG" alt="御岳山 写真41 / DSC02886.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真42を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02887.JPG" data-full="../photos/御岳山_Tokyo/DSC02887.JPG" alt="御岳山 写真42 / DSC02887.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真43を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02888.JPG" data-full="../photos/御岳山_Tokyo/DSC02888.JPG" alt="御岳山 写真43 / DSC02888.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真44を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02889.JPG" data-full="../photos/御岳山_Tokyo/DSC02889.JPG" alt="御岳山 写真44 / DSC02889.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真45を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02890.JPG" data-full="../photos/御岳山_Tokyo/DSC02890.JPG" alt="御岳山 写真45 / DSC02890.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真46を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02891.JPG" data-full="../photos/御岳山_Tokyo/DSC02891.JPG" alt="御岳山 写真46 / DSC02891.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真47を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02892.JPG" data-full="../photos/御岳山_Tokyo/DSC02892.JPG" alt="御岳山 写真47 / DSC02892.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真48を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02893.JPG" data-full="../photos/御岳山_Tokyo/DSC02893.JPG" alt="御岳山 写真48 / DSC02893.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真49を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02894.JPG" data-full="../photos/御岳山_Tokyo/DSC02894.JPG" alt="御岳山 写真49 / DSC02894.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真50を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02895.JPG" data-full="../photos/御岳山_Tokyo/DSC02895.JPG" alt="御岳山 写真50 / DSC02895.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真51を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02896.JPG" data-full="../photos/御岳山_Tokyo/DSC02896.JPG" alt="御岳山 写真51 / DSC02896.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真52を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02897.JPG" data-full="../photos/御岳山_Tokyo/DSC02897.JPG" alt="御岳山 写真52 / DSC02897.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真53を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02898.JPG" data-full="../photos/御岳山_Tokyo/DSC02898.JPG" alt="御岳山 写真53 / DSC02898.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真54を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02899.JPG" data-full="../photos/御岳山_Tokyo/DSC02899.JPG" alt="御岳山 写真54 / DSC02899.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真55を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02900.JPG" data-full="../photos/御岳山_Tokyo/DSC02900.JPG" alt="御岳山 写真55 / DSC02900.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真56を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02901.JPG" data-full="../photos/御岳山_Tokyo/DSC02901.JPG" alt="御岳山 写真56 / DSC02901.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真57を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02902.JPG" data-full="../photos/御岳山_Tokyo/DSC02902.JPG" alt="御岳山 写真57 / DSC02902.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真58を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02903.JPG" data-full="../photos/御岳山_Tokyo/DSC02903.JPG" alt="御岳山 写真58 / DSC02903.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真59を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02904.JPG" data-full="../photos/御岳山_Tokyo/DSC02904.JPG" alt="御岳山 写真59 / DSC02904.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真60を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02905.JPG" data-full="../photos/御岳山_Tokyo/DSC02905.JPG" alt="御岳山 写真60 / DSC02905.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真61を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02906.JPG" data-full="../photos/御岳山_Tokyo/DSC02906.JPG" alt="御岳山 写真61 / DSC02906.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真62を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02907.JPG" data-full="../photos/御岳山_Tokyo/DSC02907.JPG" alt="御岳山 写真62 / DSC02907.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真63を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02908.JPG" data-full="../photos/御岳山_Tokyo/DSC02908.JPG" alt="御岳山 写真63 / DSC02908.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真64を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02909.JPG" data-full="../photos/御岳山_Tokyo/DSC02909.JPG" alt="御岳山 写真64 / DSC02909.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真65を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02910.JPG" data-full="../photos/御岳山_Tokyo/DSC02910.JPG" alt="御岳山 写真65 / DSC02910.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真66を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02911.JPG" data-full="../photos/御岳山_Tokyo/DSC02911.JPG" alt="御岳山 写真66 / DSC02911.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真67を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02912.JPG" data-full="../photos/御岳山_Tokyo/DSC02912.JPG" alt="御岳山 写真67 / DSC02912.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真68を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02913.JPG" data-full="../photos/御岳山_Tokyo/DSC02913.JPG" alt="御岳山 写真68 / DSC02913.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真69を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02914.JPG" data-full="../photos/御岳山_Tokyo/DSC02914.JPG" alt="御岳山 写真69 / DSC02914.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真70を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02915.JPG" data-full="../photos/御岳山_Tokyo/DSC02915.JPG" alt="御岳山 写真70 / DSC02915.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真71を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02916.JPG" data-full="../photos/御岳山_Tokyo/DSC02916.JPG" alt="御岳山 写真71 / DSC02916.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真72を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02917.JPG" data-full="../photos/御岳山_Tokyo/DSC02917.JPG" alt="御岳山 写真72 / DSC02917.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真73を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02918.JPG" data-full="../photos/御岳山_Tokyo/DSC02918.JPG" alt="御岳山 写真73 / DSC02918.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真74を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02919.JPG" data-full="../photos/御岳山_Tokyo/DSC02919.JPG" alt="御岳山 写真74 / DSC02919.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真75を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02920.JPG" data-full="../photos/御岳山_Tokyo/DSC02920.JPG" alt="御岳山 写真75 / DSC02920.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真76を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02921.JPG" data-full="../photos/御岳山_Tokyo/DSC02921.JPG" alt="御岳山 写真76 / DSC02921.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真77を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02922.JPG" data-full="../photos/御岳山_Tokyo/DSC02922.JPG" alt="御岳山 写真77 / DSC02922.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="御岳山 写真78を拡大"><img src="../photos/御岳山_Tokyo/thumbs/DSC02923.JPG" data-full="../photos/御岳山_Tokyo/DSC02923.JPG" alt="御岳山 写真78 / DSC02923.JPG" loading="lazy" decoding="async"></button>
+      </div>
+    </section>
+
+    <nav aria-label="記録を辿る"><a href="../archive/photos.html">写真で辿る →</a> / <a href="../archive/regions.html">地域で辿る →</a> / <a href="../archive/seasons.html">季節で辿る →</a></nav>
+    <div class="credit">© 2026 MAKOTO TAKEDA / FLOWER MOUNTAIN FIELD ARCHIVE</div>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="写真の拡大表示">
+    <button class="lightbox-close" type="button" aria-label="閉じる">×</button>
+    <img src="" alt="">
+  </div>
+
+  <script>
+    let lastGalleryButton = null;
+    const galleryButtons = document.querySelectorAll(".gallery button");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const closeButton = lightbox.querySelector(".lightbox-close");
+
+    galleryButtons.forEach((galleryButton) => {
+      galleryButton.addEventListener("click", () => {
+        lastGalleryButton = galleryButton;
+        const image = galleryButton.querySelector("img");
+        lightboxImage.src = image.dataset.full || image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("active");
+        closeButton.focus();
+      });
+    });
+
+    closeButton.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+      lightboxImage.src = "";
+      lastGalleryButton?.focus();
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        lightbox.classList.remove("active");
+        lightboxImage.src = "";
+      lastGalleryButton?.focus();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Tab" && lightbox.classList.contains("active")) {
+        event.preventDefault();
+        closeButton.focus();
+      }
+      if (event.key === "Escape") {
+        lightbox.classList.remove("active");
+        lightboxImage.src = "";
+      lastGalleryButton?.focus();
+      }
+    });
+  </script>
+</body>
+</html>

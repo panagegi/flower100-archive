@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>新・花の百名山</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -475,6 +476,12 @@
         justify-content: flex-end;
       }
     }
+
+    .record-menu { margin-top: 20px; color: var(--gold); font-size: 12px; }
+    .record-menu summary { cursor: pointer; letter-spacing: .12em; }
+    .record-menu nav { display: grid; gap: 8px; max-height: 180px; overflow-y: auto; padding: 12px; background: var(--panel); border: 1px solid var(--line); }
+    .record-menu a { color: var(--text); text-decoration: none; }
+    .record-menu a:hover { color: var(--gold); }
   </style>
 </head>
 
@@ -524,6 +531,7 @@
         <div class="filter-note">
           金色はベストシーズン、淡い金色はその季節でも楽しめる地点。
         </div>
+        <details class="record-menu" open><summary>PLACE RECORDS / 5</summary><nav aria-label="場所の記録"><a href="records/Imo-wetland.html">葦毛湿原 / 愛知県 →</a><a href="records/飯盛山_Nagano.html">飯盛山 / 長野県 →</a><a href="records/御岳山_Tokyo.html">御岳山 / 東京都 →</a><a href="records/富士山_Yamanashi.html">富士山 / 山梨県 →</a><a href="records/角田山_Niigata.html">角田山 / 新潟県 →</a></nav></details>
       </div>
 
       <img src="assets/japan-map.svg" alt="日本地図">

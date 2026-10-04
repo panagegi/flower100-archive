@@ -735,8 +735,8 @@ const MOUNTAINS = [
     bestMonths: [],
     goodMonths: [],
     seasons: [],
-    visited: false,
-    recordUrl: "",
+    visited: true,
+    recordUrl: "records/御岳山_Tokyo.html",
     note: "新・花の百名山 No.35。座標・見頃月は後で精査する。"
   },
 
@@ -1512,8 +1512,8 @@ const MOUNTAINS = [
     bestMonths: [],
     goodMonths: [],
     seasons: [],
-    visited: false,
-    recordUrl: "",
+    visited: true,
+    recordUrl: "records/角田山_Niigata.html",
     note: "新・花の百名山 No.72。座標・見頃月は後で精査する。"
   },
 

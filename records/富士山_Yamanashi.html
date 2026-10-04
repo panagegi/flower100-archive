@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>富士山｜花の百名山アーカイブ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #070907;
+      --paper: #10140f;
+      --paper2: #141911;
+      --text: #f4f0e8;
+      --muted: rgba(244,240,232,.68);
+      --faint: rgba(244,240,232,.42);
+      --gold: #d9b765;
+      --line: rgba(244,240,232,.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "IBM Plex Sans JP", sans-serif;
+      line-height: 1.9;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 76vh;
+      background:
+        linear-gradient(rgba(0,0,0,.10), rgba(0,0,0,.82)),
+        url("../photos/富士山_Yamanashi/DSC02961.JPG") center / cover;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 56px 72px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 72% 44%, rgba(217,183,101,.10), transparent 34%),
+        linear-gradient(270deg, rgba(0,0,0,.62), transparent 62%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(680px, 48vw);
+      text-align: left;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .26em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(44px, 7vw, 92px);
+      font-weight: 600;
+      letter-spacing: .12em;
+      line-height: 1.08;
+    }
+
+    .meta {
+      margin-top: 18px;
+      color: rgba(244,240,232,.82);
+      letter-spacing: .12em;
+      font-size: 14px;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 36px 38px 110px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 34px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.18fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-bottom: 80px;
+    }
+
+    .archive-card {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+      border: 1px solid var(--line);
+      min-height: 420px;
+      overflow: hidden;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+      font-weight: 500;
+    }
+
+    .line-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      stroke: var(--gold);
+      stroke-width: 1.6;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: .92;
+    }
+
+    .field-image {
+      height: calc(100% - 58px);
+      min-height: 360px;
+      background: url("../photos/富士山_Yamanashi/DSC02953.JPG") center / cover;
+    }
+
+    .field-data-body {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .data-block-title {
+      color: rgba(244,240,232,.45);
+      font-size: 10px;
+      letter-spacing: .20em;
+      margin-bottom: 16px;
+    }
+
+    .data-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .data-row {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr);
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(244,240,232,.10);
+      font-size: 13px;
+    }
+
+    .data-row dt {
+      margin: 0;
+      color: rgba(244,240,232,.42);
+      letter-spacing: .08em;
+      font-size: 11px;
+    }
+
+    .data-row dd {
+      margin: 0;
+      color: rgba(244,240,232,.86);
+      overflow-wrap: anywhere;
+    }
+
+    .feel-list {
+      display: grid;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .feel-item strong {
+      display: block;
+      color: rgba(244,240,232,.46);
+      font-size: 10px;
+      letter-spacing: .18em;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .feel-item span {
+      color: rgba(244,240,232,.84);
+    }
+
+    .recording-body {
+      padding: 22px;
+    }
+
+    .recording-unit {
+      margin-bottom: 24px;
+    }
+
+    .recording-unit:last-child {
+      margin-bottom: 0;
+    }
+
+    .recording-unit h3 {
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      color: rgba(244,240,232,.78);
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    section {
+      margin: 82px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      color: var(--gold);
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: .18em;
+      font-weight: 500;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+      margin-left: 8px;
+    }
+
+    .memo {
+      max-width: 780px;
+      font-size: 18px;
+      color: rgba(244,240,232,.86);
+    }
+
+    .field-kit {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .kit-photo {
+      min-height: 340px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(145deg, rgba(217,183,101,.10), rgba(255,255,255,.02));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(244,240,232,.38);
+      letter-spacing: .16em;
+      font-size: 12px;
+    }
+
+    .kit-note {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+      padding: 28px;
+      color: rgba(244,240,232,.78);
+    }
+
+    .kit-note p {
+      margin: 0 0 1.3em;
+    }
+
+    .kit-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .gallery button {
+      appearance: none;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease, opacity .35s ease;
+    }
+
+    .gallery button:hover img {
+      transform: scale(1.045);
+      opacity: .86;
+    }
+
+    .sound-toggle {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 100;
+      padding: 12px 18px;
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(0,0,0,.72);
+      color: var(--text);
+      font-family: inherit;
+      letter-spacing: .12em;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+    }
+
+    .sound-toggle.playing {
+      color: var(--gold);
+      border-color: var(--gold);
+      box-shadow: 0 0 24px rgba(217,183,101,.24);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.88);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 34px;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 88vh;
+      object-fit: contain;
+      box-shadow: 0 30px 100px rgba(0,0,0,.75);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      right: 28px;
+      top: 22px;
+      color: var(--text);
+      background: transparent;
+      border: 0;
+      font-size: 34px;
+      cursor: pointer;
+    }
+
+    .credit {
+      margin-top: 80px;
+      color: rgba(244,240,232,.36);
+      font-size: 10px;
+      letter-spacing: .16em;
+      text-align: right;
+    }
+
+    @media (max-width: 1050px) {
+      .hero {
+        justify-content: flex-start;
+      }
+
+      .hero-inner {
+        width: min(720px, 90vw);
+      }
+
+      .top-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .archive-card {
+        min-height: auto;
+      }
+
+      .field-image {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        min-height: 68vh;
+        padding: 34px 24px;
+      }
+
+      .page {
+        padding: 28px 22px 100px;
+      }
+
+      .field-data-body {
+        grid-template-columns: 1fr;
+      }
+
+      .field-kit {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="kicker">FIELD RECORD 004 / YAMANASHI</div>
+      <h1>富士山</h1>
+      <p class="meta">2026.08.28–2026.08.29（撮影日） / YAMANASHI</p>
+    </div>
+  </header>
+
+  <main class="page">
+    <a class="back" href="../index.html">← 花の百名山アーカイブへ戻る</a>
+
+    <section class="top-grid">
+      <article class="archive-card">
+        <div class="card-head">
+          <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="4" y="5" width="16" height="14" rx="1.5"></rect>
+            <circle cx="9" cy="10" r="1.5"></circle>
+            <path d="M4 16l5-4 4 3 3-2 4 3"></path>
+          </svg>
+          FIELD IMAGE
+        </div>
+        <div class="field-image" aria-label="富士山の写真"></div>
+      </article>
+
+      <article class="archive-card">
+        <div class="card-head">
+          <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 4h14v16H5z"></path>
+            <path d="M8 8h8"></path>
+            <path d="M8 12h8"></path>
+            <path d="M8 16h5"></path>
+          </svg>
+          FIELD DATA
+        </div>
+
+        <div class="field-data-body">
+          <div>
+            <div class="data-block-title">RECORD DATA</div>
+
+            <dl class="data-list">
+              <div class="data-row">
+                <dt>ARCHIVE</dt>
+                <dd>004</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>PLACE</dt>
+                <dd>山梨県 富士山</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>HEIGHT</dt>
+                <dd>未記入</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>DATE</dt>
+                <dd>2026.08.28–2026.08.29（写真の撮影日）</dd>
+              </div>
+              <div class="data-row">
+                <dt>WEATHER</dt>
+                <dd>未記入</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>PHOTOS</dt>
+                <dd>39枚</dd>
+              </div>
+
+              <div class="data-row">
+                <dt>SOUND</dt>
+                <dd>未追加</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div>
+            <div class="data-block-title">WALK FEEL</div>
+
+            <div class="feel-list">
+              <div class="feel-item">
+                <strong>FOOTING</strong>
+                <span>未記入</span>
+              </div>
+
+              <div class="feel-item">
+                <strong>SOUND</strong>
+                <span>未記入</span>
+              </div>
+
+              <div class="feel-item">
+                <strong>HUMIDITY</strong>
+                <span>未記入</span>
+              </div>
+
+              <div class="feel-item">
+                <strong>IMPRESSION</strong>
+                <span>未記入</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="archive-card">
+        <div class="card-head">
+          <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 12h3l2-5 4 10 2-5h5"></path>
+            <circle cx="12" cy="12" r="9"></circle>
+          </svg>
+          FIELD RECORDING
+        </div>
+
+        <div class="recording-body">
+          <p class="data-block-title">NO RECORDING YET</p>
+          <p>この山の録音はまだ追加されていません。</p>
+          <a href="../archive/sound.html">音のアーカイブへ →</a>
+        </div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 19l3.5-1 9-9a2.1 2.1 0 0 0-3-3l-9 9L5 19z"></path>
+          <path d="M13.5 6.5l4 4"></path>
+        </svg>
+        <h2>HIKE MEMO</h2>
+      </div>
+
+      <p class="memo">
+        この日のメモは、これから書き足していく。
+      </p>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 7h12l1 13H5L6 7z"></path>
+          <path d="M9 7a3 3 0 0 1 6 0"></path>
+          <path d="M8 12h8"></path>
+        </svg>
+        <h2>FIELD KIT</h2>
+      </div>
+
+      <div class="field-kit">
+        <div class="kit-photo">
+          <img src="../photos/富士山_Yamanashi/DSC02929.JPG" alt="富士山の装備写真" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        </div>
+
+        <div class="kit-note"><p>出発前に並べた装備の写真。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="5" width="16" height="14" rx="1.5"></rect>
+          <path d="M8 9h.01"></path>
+          <path d="M4 16l5-4 4 3 3-2 4 3"></path>
+        </svg>
+        <h2>PHOTOS</h2>
+      </div>
+
+      <div class="gallery">
+        <button type="button" aria-label="富士山 写真1を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02929.JPG" data-full="../photos/富士山_Yamanashi/DSC02929.JPG" alt="富士山 写真1 / DSC02929.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真2を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02930.JPG" data-full="../photos/富士山_Yamanashi/DSC02930.JPG" alt="富士山 写真2 / DSC02930.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真3を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02931.JPG" data-full="../photos/富士山_Yamanashi/DSC02931.JPG" alt="富士山 写真3 / DSC02931.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真4を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02932.JPG" data-full="../photos/富士山_Yamanashi/DSC02932.JPG" alt="富士山 写真4 / DSC02932.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真5を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02933.JPG" data-full="../photos/富士山_Yamanashi/DSC02933.JPG" alt="富士山 写真5 / DSC02933.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真6を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02934.JPG" data-full="../photos/富士山_Yamanashi/DSC02934.JPG" alt="富士山 写真6 / DSC02934.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真7を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02935.JPG" data-full="../photos/富士山_Yamanashi/DSC02935.JPG" alt="富士山 写真7 / DSC02935.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真8を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02936.JPG" data-full="../photos/富士山_Yamanashi/DSC02936.JPG" alt="富士山 写真8 / DSC02936.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真9を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02937.JPG" data-full="../photos/富士山_Yamanashi/DSC02937.JPG" alt="富士山 写真9 / DSC02937.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真10を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02938.JPG" data-full="../photos/富士山_Yamanashi/DSC02938.JPG" alt="富士山 写真10 / DSC02938.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真11を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02939.JPG" data-full="../photos/富士山_Yamanashi/DSC02939.JPG" alt="富士山 写真11 / DSC02939.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真12を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02940.JPG" data-full="../photos/富士山_Yamanashi/DSC02940.JPG" alt="富士山 写真12 / DSC02940.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真13を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02941.JPG" data-full="../photos/富士山_Yamanashi/DSC02941.JPG" alt="富士山 写真13 / DSC02941.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真14を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02942.JPG" data-full="../photos/富士山_Yamanashi/DSC02942.JPG" alt="富士山 写真14 / DSC02942.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真15を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02943.JPG" data-full="../photos/富士山_Yamanashi/DSC02943.JPG" alt="富士山 写真15 / DSC02943.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真16を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02944.JPG" data-full="../photos/富士山_Yamanashi/DSC02944.JPG" alt="富士山 写真16 / DSC02944.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真17を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02945.JPG" data-full="../photos/富士山_Yamanashi/DSC02945.JPG" alt="富士山 写真17 / DSC02945.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真18を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02946.JPG" data-full="../photos/富士山_Yamanashi/DSC02946.JPG" alt="富士山 写真18 / DSC02946.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真19を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02947.JPG" data-full="../photos/富士山_Yamanashi/DSC02947.JPG" alt="富士山 写真19 / DSC02947.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真20を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02948.JPG" data-full="../photos/富士山_Yamanashi/DSC02948.JPG" alt="富士山 写真20 / DSC02948.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真21を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02949.JPG" data-full="../photos/富士山_Yamanashi/DSC02949.JPG" alt="富士山 写真21 / DSC02949.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真22を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02950.JPG" data-full="../photos/富士山_Yamanashi/DSC02950.JPG" alt="富士山 写真22 / DSC02950.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真23を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02951.JPG" data-full="../photos/富士山_Yamanashi/DSC02951.JPG" alt="富士山 写真23 / DSC02951.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真24を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02952.JPG" data-full="../photos/富士山_Yamanashi/DSC02952.JPG" alt="富士山 写真24 / DSC02952.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真25を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02953.JPG" data-full="../photos/富士山_Yamanashi/DSC02953.JPG" alt="富士山 写真25 / DSC02953.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真26を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02954.JPG" data-full="../photos/富士山_Yamanashi/DSC02954.JPG" alt="富士山 写真26 / DSC02954.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真27を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02955.JPG" data-full="../photos/富士山_Yamanashi/DSC02955.JPG" alt="富士山 写真27 / DSC02955.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真28を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02956.JPG" data-full="../photos/富士山_Yamanashi/DSC02956.JPG" alt="富士山 写真28 / DSC02956.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真29を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02957.JPG" data-full="../photos/富士山_Yamanashi/DSC02957.JPG" alt="富士山 写真29 / DSC02957.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真30を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02958.JPG" data-full="../photos/富士山_Yamanashi/DSC02958.JPG" alt="富士山 写真30 / DSC02958.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真31を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02959.JPG" data-full="../photos/富士山_Yamanashi/DSC02959.JPG" alt="富士山 写真31 / DSC02959.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真32を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02960.JPG" data-full="../photos/富士山_Yamanashi/DSC02960.JPG" alt="富士山 写真32 / DSC02960.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真33を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02961.JPG" data-full="../photos/富士山_Yamanashi/DSC02961.JPG" alt="富士山 写真33 / DSC02961.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真34を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02962.JPG" data-full="../photos/富士山_Yamanashi/DSC02962.JPG" alt="富士山 写真34 / DSC02962.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真35を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02963.JPG" data-full="../photos/富士山_Yamanashi/DSC02963.JPG" alt="富士山 写真35 / DSC02963.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真36を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02964.JPG" data-full="../photos/富士山_Yamanashi/DSC02964.JPG" alt="富士山 写真36 / DSC02964.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真37を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02965.JPG" data-full="../photos/富士山_Yamanashi/DSC02965.JPG" alt="富士山 写真37 / DSC02965.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真38を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02966.JPG" data-full="../photos/富士山_Yamanashi/DSC02966.JPG" alt="富士山 写真38 / DSC02966.JPG" loading="lazy" decoding="async"></button>
+        <button type="button" aria-label="富士山 写真39を拡大"><img src="../photos/富士山_Yamanashi/thumbs/DSC02967.JPG" data-full="../photos/富士山_Yamanashi/DSC02967.JPG" alt="富士山 写真39 / DSC02967.JPG" loading="lazy" decoding="async"></button>
+      </div>
+    </section>
+
+    <nav aria-label="記録を辿る"><a href="../archive/photos.html">写真で辿る →</a> / <a href="../archive/regions.html">地域で辿る →</a> / <a href="../archive/seasons.html">季節で辿る →</a></nav>
+    <div class="credit">© 2026 MAKOTO TAKEDA / FLOWER MOUNTAIN FIELD ARCHIVE</div>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="写真の拡大表示">
+    <button class="lightbox-close" type="button" aria-label="閉じる">×</button>
+    <img src="" alt="">
+  </div>
+
+  <script>
+    let lastGalleryButton = null;
+    const galleryButtons = document.querySelectorAll(".gallery button");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = lightbox.querySelector("img");
+    const closeButton = lightbox.querySelector(".lightbox-close");
+
+    galleryButtons.forEach((galleryButton) => {
+      galleryButton.addEventListener("click", () => {
+        lastGalleryButton = galleryButton;
+        const image = galleryButton.querySelector("img");
+        lightboxImage.src = image.dataset.full || image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add("active");
+        closeButton.focus();
+      });
+    });
+
+    closeButton.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+      lightboxImage.src = "";
+      lastGalleryButton?.focus();
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        lightbox.classList.remove("active");
+        lightboxImage.src = "";
+      lastGalleryButton?.focus();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Tab" && lightbox.classList.contains("active")) {
+        event.preventDefault();
+        closeButton.focus();
+      }
+      if (event.key === "Escape") {
+        lightbox.classList.remove("active");
+        lightboxImage.src = "";
+      lastGalleryButton?.focus();
+      }
+    });
+  </script>
+</body>
+</html>
