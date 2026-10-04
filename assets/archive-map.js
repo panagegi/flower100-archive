@@ -10,8 +10,15 @@
   const seasonMonths = { spring: [3, 4, 5], summer: [6, 7, 8], autumn: [9, 10, 11], winter: [12, 1, 2] };
   const displayName = place => place.displayName || place.name;
   const count = document.getElementById('visited-count');
-  count.textContent = MOUNTAINS.filter(place => place.visited).length;
-  document.getElementById('record-count').textContent = `${allPlaces.filter(place => place.recordUrl).length}地点の訪問記録（100選外を含む）`;
+  const listedVisits = MOUNTAINS.filter(place => place.visited);
+  const extraVisits = EXTRA_RECORDS.filter(place => place.visited);
+  count.textContent = listedVisits.length + extraVisits.length;
+  const breakdown = document.getElementById('record-count');
+  breakdown.replaceChildren(
+    document.createTextNode(`新・花の百名山：${listedVisits.length} / ${MOUNTAINS.length}`),
+    document.createElement('br'),
+    document.createTextNode(`100選外の訪問：${extraVisits.length}か所${extraVisits.length ? `（${extraVisits.map(displayName).join('・')}）` : ''}`)
+  );
   document.getElementById('pending-summary').textContent = `位置の確認中 / ${pending.length}地点`;
   const pendingList = document.getElementById('pending-list');
   for (const place of pending) {
