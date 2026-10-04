@@ -1,0 +1,850 @@
+{
+  "checkedOn": "2026-10-04",
+  "locations": {
+    "rebun-dake": {
+      "lat": 45.3725205,
+      "lng": 141.0158034,
+      "label": "礼文岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "rishiri-zan": {
+      "lat": 45.1785358,
+      "lng": 141.2420356,
+      "label": "利尻山（利尻富士）",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "shokanbetsu-dake": {
+      "lat": 43.7158652,
+      "lng": 141.5229494,
+      "label": "暑寒別岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "yubari-dake": {
+      "lat": 43.0996915,
+      "lng": 142.2510108,
+      "label": "夕張岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "rausu-dake": {
+      "lat": 44.0759167,
+      "lng": 145.1222459,
+      "label": "羅臼岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "shari-dake": {
+      "lat": 43.7657428,
+      "lng": 144.7176586,
+      "label": "斜里岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "mekunnai-dake": {
+      "lat": 42.8997461,
+      "lng": 140.5152925,
+      "label": "目国内岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "apoi-dake": {
+      "lat": 42.1078493,
+      "lng": 143.0256581,
+      "label": "アポイ岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "hayachine-san": {
+      "lat": 39.558445,
+      "lng": 141.4888761,
+      "label": "早池峰山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "himekami-yama": {
+      "lat": 39.8440244,
+      "lng": 141.2468964,
+      "label": "姫神山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kurikoma-yama": {
+      "lat": 38.9609121,
+      "lng": 140.7884297,
+      "label": "栗駒山（須川岳）",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "chokai-san": {
+      "lat": 39.0993689,
+      "lng": 140.048885,
+      "label": "鳥海山＜新山＞",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "gassan": {
+      "lat": 38.5491356,
+      "lng": 140.0269714,
+      "label": "月山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kamakura-dake": {
+      "lat": 37.4670244,
+      "lng": 140.6889099,
+      "label": "鎌倉岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "otakine-yama": {
+      "lat": 37.354899,
+      "lng": 140.7016644,
+      "label": "大滝根山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "hiuchigatake": {
+      "lat": 36.9551022,
+      "lng": 139.2853336,
+      "label": "燧ヶ岳＜柴安嵓＞",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "haruna-san": {
+      "lat": 36.4774022,
+      "lng": 138.8508892,
+      "label": "榛名山＜掃部ヶ岳＞",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "ryogami-san": {
+      "lat": 36.0233999,
+      "lng": 138.8413174,
+      "label": "両神山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "izugatake": {
+      "lat": 35.9268729,
+      "lng": 139.1606407,
+      "label": "伊豆ヶ岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kumotori-yama": {
+      "lat": 35.8555079,
+      "lng": 138.9439135,
+      "label": "雲取山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kobushi-gatake": {
+      "lat": 35.9091147,
+      "lng": 138.7289083,
+      "label": "甲武信ヶ岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kentoku-san": {
+      "lat": 35.8227756,
+      "lng": 138.7148978,
+      "label": "乾徳山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "daibosatsu-rei": {
+      "lat": 35.7487619,
+      "lng": 138.8455058,
+      "label": "大菩薩嶺",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "mitsutoge-yama": {
+      "lat": 35.5492723,
+      "lng": 138.8092044,
+      "label": "三ツ峠山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "senjo-gatake": {
+      "lat": 35.7200686,
+      "lng": 138.1835805,
+      "label": "仙丈ヶ岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kita-dake": {
+      "lat": 35.6743139,
+      "lng": 138.2388278,
+      "label": "北岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kushigata-yama": {
+      "lat": 35.5866926,
+      "lng": 138.369208,
+      "label": "櫛形山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "chokuro-yama": {
+      "lat": 34.7883724,
+      "lng": 138.8679958,
+      "label": "長九郎山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "fuetsu-zan": {
+      "lat": 35.5494739,
+      "lng": 137.7838104,
+      "label": "風越山（権現山）",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "ena-san": {
+      "lat": 35.4430444,
+      "lng": 137.5978908,
+      "label": "恵那山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "tateshina-yama": {
+      "lat": 36.1037295,
+      "lng": 138.2950714,
+      "label": "蓼科山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "hachibuse-yama": {
+      "lat": 36.1630461,
+      "lng": 138.0591541,
+      "label": "鉢伏山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "harinoki-dake": {
+      "lat": 36.5380773,
+      "lng": 137.6844267,
+      "label": "針ノ木岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "renge-dake": {
+      "lat": 36.5357466,
+      "lng": 137.7105428,
+      "label": "蓮華岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kashimayari-gatake": {
+      "lat": 36.6245532,
+      "lng": 137.7470576,
+      "label": "鹿島槍ヶ岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "shirouma-dake": {
+      "lat": 36.7585102,
+      "lng": 137.7585546,
+      "label": "白馬岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "hiragatake": {
+      "lat": 37.0020894,
+      "lng": 139.1709192,
+      "label": "平ヶ岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "sumon-dake": {
+      "lat": 37.3976866,
+      "lng": 139.1365666,
+      "label": "守門岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "asakusa-dake": {
+      "lat": 37.3435879,
+      "lng": 139.2335738,
+      "label": "浅草岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kinpoku-san": {
+      "lat": 38.103882,
+      "lng": 138.3498164,
+      "label": "金北山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kitanomata-dake": {
+      "lat": 36.4210417,
+      "lng": 137.5123789,
+      "label": "北ノ俣岳（上ノ岳）",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "iozen": {
+      "lat": 36.512764,
+      "lng": 136.7960126,
+      "label": "医王山＜奥医王山＞",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "haku-san": {
+      "lat": 36.1550631,
+      "lng": 136.7714488,
+      "label": "白山＜御前峰＞",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kasa-gatake": {
+      "lat": 36.3154774,
+      "lng": 137.5504008,
+      "label": "笠ヶ岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "sanage-yama": {
+      "lat": 35.2059095,
+      "lng": 137.1668234,
+      "label": "猿投山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "hiyamizu-yama": {
+      "lat": 33.8991016,
+      "lng": 135.6528183,
+      "label": "冷水山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "ibuki-yama": {
+      "lat": 35.4178358,
+      "lng": 136.406346,
+      "label": "伊吹山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "oe-yama": {
+      "lat": 35.4534533,
+      "lng": 135.1066532,
+      "label": "大江山（千丈ヶ嶽）",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "hyono-sen": {
+      "lat": 35.3539591,
+      "lng": 134.5138416,
+      "label": "氷ノ山（須賀ノ山）",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "daisen": {
+      "lat": 35.3712039,
+      "lng": 133.5463558,
+      "label": "大山＜剣ヶ峰＞",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "dogo-yama": {
+      "lat": 35.0695036,
+      "lng": 133.2328936,
+      "label": "道後山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "ishizuchi-san": {
+      "lat": 33.7677697,
+      "lng": 133.1150861,
+      "label": "石鎚山＜天狗岳＞",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kaimon-dake": {
+      "lat": 31.1799256,
+      "lng": 130.5284058,
+      "label": "開聞岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "daisetsu-zan": {
+      "lat": 43.663582,
+      "lng": 142.854138,
+      "label": "大雪山（ヌタプカウシペ）＜旭岳＞",
+      "kind": "代表峰",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kita-hakkoda-san": {
+      "lat": 40.6589069,
+      "lng": 140.8772486,
+      "label": "八甲田山＜大岳＞",
+      "kind": "代表峰",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "hachimantai": {
+      "lat": 39.9578082,
+      "lng": 140.8540944,
+      "label": "八幡平",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "taneyama-kogen": {
+      "lat": 39.2011434,
+      "lng": 141.4017244,
+      "label": "物見山（種山）",
+      "kind": "代表峰",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "akita-komagatake": {
+      "lat": 39.7610969,
+      "lng": 140.7993807,
+      "label": "駒ヶ岳＜男女岳＞",
+      "kind": "代表峰",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "aizu-komagatake": {
+      "lat": 37.0475739,
+      "lng": 139.3535428,
+      "label": "駒ヶ岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "nikko-shirane-san": {
+      "lat": 36.7986017,
+      "lng": 139.3759211,
+      "label": "白根山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "joshu-hotaka-yama": {
+      "lat": 36.8051889,
+      "lng": 139.1326009,
+      "label": "武尊山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "akagi-yama": {
+      "lat": 36.5603671,
+      "lng": 139.1932699,
+      "label": "赤城山＜黒檜山＞",
+      "kind": "代表峰",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "hiryu-san": {
+      "lat": 35.8397875,
+      "lng": 138.8922142,
+      "label": "大洞山（飛龍山）",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kai-komagatake": {
+      "lat": 35.7580089,
+      "lng": 138.2366878,
+      "label": "駒ヶ岳",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "hoo-sanzan": {
+      "lat": 35.7017304,
+      "lng": 138.3045944,
+      "label": "観音ヶ岳",
+      "kind": "代表峰",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "gongen-yama": {
+      "lat": 35.6678723,
+      "lng": 139.0214345,
+      "label": "権現山",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "dainichi-renpo": {
+      "lat": 36.5983733,
+      "lng": 137.5809778,
+      "label": "奥大日岳",
+      "kind": "代表峰",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "kirishima-renpo": {
+      "lat": 31.9341705,
+      "lng": 130.8615767,
+      "label": "霧島山＜韓国岳＞",
+      "kind": "代表峰",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "fuji-extra": {
+      "lat": 35.3607378,
+      "lng": 138.7273731,
+      "label": "富士山＜剣ヶ峯＞",
+      "kind": "山頂",
+      "source": "https://www.gsi.go.jp/KOKUJYOHO/MOUNTAIN/1003zan20260331.zip",
+      "sourceName": "国土地理院・日本の主な山岳標高（2026年3月31日版）"
+    },
+    "orofure-yama": {
+      "lat": 42.565942,
+      "lng": 141.087119,
+      "label": "オロフレ山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E3%82%AA%E3%83%AD%E3%83%95%E3%83%AC%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "1578"
+    },
+    "muroran-dake": {
+      "lat": 42.435589,
+      "lng": 141.003069,
+      "label": "鷲別岳",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%B7%B2%E5%88%A5%E5%B2%B3",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "1230"
+    },
+    "hakuun-zan": {
+      "lat": 43.258758,
+      "lng": 143.115242,
+      "label": "白雲山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%99%BD%E9%9B%B2%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "1633"
+    },
+    "narukami-yama": {
+      "lat": 36.490215,
+      "lng": 139.3613206,
+      "label": "鳴神山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%B3%B4%E7%A5%9E%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "10203"
+    },
+    "ozaku-san": {
+      "lat": 36.59809,
+      "lng": 139.5804297,
+      "label": "石裂山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%9F%B3%E8%A3%82%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "9205"
+    },
+    "mikamo-yama": {
+      "lat": 36.31599,
+      "lng": 139.6292067,
+      "label": "三毳山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%B8%89%E6%AF%B3%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "9203"
+    },
+    "bushu-mitake-san": {
+      "lat": 35.7828766,
+      "lng": 139.149517,
+      "label": "御岳山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%BE%A1%E5%B2%B3%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "13205"
+    },
+    "kasatori-yama": {
+      "lat": 35.8654515,
+      "lng": 138.8198914,
+      "label": "笠取山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E7%AC%A0%E5%8F%96%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "11207"
+    },
+    "otome-kogen": {
+      "lat": 35.7991715,
+      "lng": 138.6342035,
+      "label": "乙女高原",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%B9%99%E5%A5%B3%E9%AB%98%E5%8E%9F",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "19205"
+    },
+    "kuki-yama": {
+      "lat": 35.5766797,
+      "lng": 138.9511077,
+      "label": "九鬼山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%B9%9D%E9%AC%BC%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "19206"
+    },
+    "nijurokuya-san": {
+      "lat": 35.5658487,
+      "lng": 139.0440658,
+      "label": "二十六夜山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E4%BA%8C%E5%8D%81%E5%85%AD%E5%A4%9C%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "19212"
+    },
+    "kurofuji": {
+      "lat": 35.7976375,
+      "lng": 138.5532463,
+      "label": "黒富士",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%BB%92%E5%AF%8C%E5%A3%AB",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "19201"
+    },
+    "tengu-yama": {
+      "lat": 35.9917015,
+      "lng": 138.5689088,
+      "label": "天狗山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%A9%E7%8B%97%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "20304"
+    },
+    "odaka-yama": {
+      "lat": 35.4578374,
+      "lng": 138.0390512,
+      "label": "尾高山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%B0%BE%E9%AB%98%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "20417"
+    },
+    "yashimagahara-shitsugen": {
+      "lat": 36.1206204,
+      "lng": 138.1685488,
+      "label": "八島ヶ原湿原",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%85%AB%E5%B3%B6%E3%83%B6%E5%8E%9F%E6%B9%BF%E5%8E%9F",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "20206"
+    },
+    "higura-yama": {
+      "lat": 37.6471889,
+      "lng": 139.3217286,
+      "label": "日倉山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%97%A5%E5%80%89%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "15218"
+    },
+    "kakuda-yama": {
+      "lat": 37.7795756,
+      "lng": 138.8415639,
+      "label": "角田山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E8%A7%92%E7%94%B0%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "15108"
+    },
+    "hayatsuki-one": {
+      "lat": 36.6362305,
+      "lng": 137.5821216,
+      "label": "早月尾根",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%97%A9%E6%9C%88%E5%B0%BE%E6%A0%B9",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "16322"
+    },
+    "tarobe-daira": {
+      "lat": 36.4525598,
+      "lng": 137.51965,
+      "label": "太郎兵衛平",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%A4%AA%E9%83%8E%E5%85%B5%E8%A1%9B%E5%B9%B3",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "16201"
+    },
+    "yumihari-sanchi": {
+      "lat": 34.7472284,
+      "lng": 137.4511617,
+      "label": "葦毛湿原",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E8%91%A6%E6%AF%9B%E6%B9%BF%E5%8E%9F",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "23201"
+    },
+    "fujiwara-dake": {
+      "lat": 35.1587208,
+      "lng": 136.452822,
+      "label": "藤原岳",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E8%97%A4%E5%8E%9F%E5%B2%B3",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "25213"
+    },
+    "odani-yama": {
+      "lat": 35.4657378,
+      "lng": 136.273525,
+      "label": "小谷山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%B0%8F%E8%B0%B7%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "25203"
+    },
+    "senjo-sen": {
+      "lat": 35.4283799,
+      "lng": 133.591474,
+      "label": "船上山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E8%88%B9%E4%B8%8A%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "31371"
+    },
+    "hiba-yama": {
+      "lat": 35.0650348,
+      "lng": 133.056381,
+      "label": "比婆山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E6%AF%94%E5%A9%86%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "34210"
+    },
+    "besshi-dozan-goe": {
+      "lat": 33.8624298,
+      "lng": 133.325694,
+      "label": "銅山越",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%8A%85%E5%B1%B1%E8%B6%8A",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "38205"
+    },
+    "kosho-zan": {
+      "lat": 33.4838068,
+      "lng": 130.725711,
+      "label": "古処山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E5%8F%A4%E5%87%A6%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "40227"
+    },
+    "iimori-extra": {
+      "lat": 35.9194876,
+      "lng": 138.4742523,
+      "label": "飯盛山",
+      "kind": "地名の代表位置",
+      "source": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=%E9%A3%AF%E7%9B%9B%E5%B1%B1",
+      "sourceName": "国土地理院・地名検索",
+      "municipalityCode": "20305"
+    }
+  },
+  "pending": [
+    {
+      "id": "asama-kogen",
+      "name": "浅間高原",
+      "prefectures": [
+        "長野県",
+        "群馬県"
+      ]
+    },
+    {
+      "id": "hokushin-gogaku",
+      "name": "北信五岳",
+      "prefectures": [
+        "長野県",
+        "新潟県"
+      ]
+    },
+    {
+      "id": "komatsubara-shitsugen",
+      "name": "小松原湿原",
+      "prefectures": [
+        "新潟県",
+        "長野県"
+      ]
+    },
+    {
+      "id": "osugidani",
+      "name": "大杉谷",
+      "prefectures": [
+        "三重県",
+        "奈良県"
+      ]
+    },
+    {
+      "id": "kumanoji",
+      "name": "熊野路",
+      "prefectures": [
+        "和歌山県",
+        "奈良県",
+        "三重県"
+      ]
+    },
+    {
+      "id": "aso-kogen",
+      "name": "阿蘇高原",
+      "prefectures": [
+        "熊本県"
+      ]
+    }
+  ]
+}

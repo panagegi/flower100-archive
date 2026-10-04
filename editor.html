@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>画像を選ぶ | 新・花の百名山</title><link rel="stylesheet" href="assets/image-editor.css"></head>
+<body>
+<header><div><small>FIELD NOTES / IMAGE EDITOR</small><h1>画像を選ぶ</h1></div><a href="index.html">サイトに戻る ↗</a></header>
+<p class="intro">写真を選び、ページでの見え方を調整できます。下書きはこのブラウザに保存されます。公開するには、設定を保存したあとVS Codeでコミット・Pushしてください。</p>
+<main>
+<section class="controls" aria-label="画像の選択">
+<label>ページ<select id="page"></select></label><label>変更する場所<select id="slot"></select></label>
+<p id="selection"></p>
+<div class="positions"><label>左右の位置 <output id="x-value">50%</output><input id="x" type="range" min="0" max="100" value="50"></label><label>上下の位置 <output id="y-value">50%</output><input id="y" type="range" min="0" max="100" value="50"></label></div>
+<button id="reset" type="button">この場所を元の画像に戻す</button>
+<label>写真のフォルダ<select id="group"></select></label><label>ファイル名で探す<input id="search" type="search" placeholder="DSC02834 など"></label>
+<p id="count"></p><div id="photos" class="photos"></div>
+</section>
+<section class="preview-section" aria-label="実際のページのプレビュー"><div class="preview-heading"><h2>ページで確認</h2><label>表示幅<select id="width"><option value="wide">パソコン</option><option value="phone">スマートフォン</option></select></label></div><div class="preview-shell"><iframe id="preview" title="選んだ画像のページプレビュー"></iframe></div><p>プレビュー内はスクロールできます。画像の縦横比によって、位置を動かしても見え方が変わらない場合があります。</p></section>
+</main>
+<footer><p id="status" role="status" aria-live="polite"></p><div class="actions"><button id="save" type="button">サイトのフォルダへ保存</button><button id="download" type="button">設定ファイルをダウンロード</button><button id="discard" type="button">下書きを取り消す</button></div><p>フォルダへ保存すると <code>data/image-settings.js</code> を更新します。ダウンロードした場合は、このファイルをサイトの <code>data</code> フォルダに入れて置き換えてください。写真の原本は変更しません。</p><p id="support"></p></footer>
+<script src="data/image-catalog.js"></script><script src="data/image-settings.js"></script><script src="assets/image-editor.js"></script>
+</body></html>
