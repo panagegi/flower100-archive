@@ -19,6 +19,18 @@ window.FLOWER_IMAGE_SETTINGS = {
         "x": 50,
         "y": 50
       }
+    },
+    "records/富士山_Yamanashi.html": {
+      "hero": {
+        "src": "photos/富士山_Yamanashi/DSC02945.JPG",
+        "x": 50,
+        "y": 50
+      },
+      "field": {
+        "src": "photos/富士山_Yamanashi/DSC02942.JPG",
+        "x": 50,
+        "y": 50
+      }
     }
   }
 };
