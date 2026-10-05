@@ -31,6 +31,18 @@
       }
       if (focus === slot.key) node.scrollIntoView?.({block: slot.key === 'background' ? 'start' : 'center', behavior:'instant'});
     }
+    if (new URLSearchParams(location.search).has('image-preview') && window.parent !== window) addPickButtons();
+  }
+  function addPickButtons() {
+    document.querySelectorAll('[data-image-pick]').forEach(button => button.remove());
+    for(const slot of page.slots){
+      const node=originals.get(slot.key)?.node;if(!node)continue;
+      const button=document.createElement('button');button.type='button';button.dataset.imagePick=slot.key;
+      button.textContent=slot.key==='background'?'このページの背景を変更':'この画像を変更';
+      button.style.cssText='position:absolute;top:12px;right:12px;z-index:1100;padding:10px 14px;background:#d9b765;color:#17180f;border:2px solid #17180f;border-radius:6px;font:14px system-ui;cursor:pointer;letter-spacing:normal;';
+      if(slot.key==='background'){button.style.position='fixed';document.body.append(button);}else{if(getComputedStyle(node).position==='static')node.style.position='relative';node.append(button);}
+      button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();window.parent.postMessage({type:'flower-image-pick',slot:slot.key},location.origin==='null'?'*':location.origin);});
+    }
   }
   apply(window.FLOWER_IMAGE_SETTINGS);
   if (new URLSearchParams(location.search).has('image-preview') && window.parent !== window) {

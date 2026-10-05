@@ -436,6 +436,7 @@
       }
     }
   </style>
+<link rel="stylesheet" href="../assets/photo-zoom.css">
 </head>
 
 <body>
@@ -650,41 +651,10 @@
       }
     });
 
-    const galleryButtons = document.querySelectorAll(".gallery button");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = lightbox.querySelector("img");
-    const closeButton = lightbox.querySelector(".lightbox-close");
-
-    galleryButtons.forEach((galleryButton) => {
-      galleryButton.addEventListener("click", () => {
-        const image = galleryButton.querySelector("img");
-        lightboxImage.src = image.src;
-        lightboxImage.alt = image.alt;
-        lightbox.classList.add("active");
-      });
-    });
-
-    closeButton.addEventListener("click", () => {
-      lightbox.classList.remove("active");
-      lightboxImage.src = "";
-    });
-
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        lightbox.classList.remove("active");
-        lightboxImage.src = "";
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        lightbox.classList.remove("active");
-        lightboxImage.src = "";
-      }
-    });
   </script>
 <script src="../data/image-catalog.js"></script>
 <script src="../data/image-settings.js"></script>
 <script src="../assets/image-settings.js"></script>
+<script src="../assets/photo-zoom.js"></script>
 </body>
 </html>

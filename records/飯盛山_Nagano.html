@@ -438,6 +438,7 @@
       }
     }
   </style>
+<link rel="stylesheet" href="../assets/photo-zoom.css">
 </head>
 
 <body>
@@ -663,51 +664,10 @@
   </div>
 
   <script>
-    let lastGalleryButton = null;
-    const galleryButtons = document.querySelectorAll(".gallery button");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = lightbox.querySelector("img");
-    const closeButton = lightbox.querySelector(".lightbox-close");
-
-    galleryButtons.forEach((galleryButton) => {
-      galleryButton.addEventListener("click", () => {
-        lastGalleryButton = galleryButton;
-        const image = galleryButton.querySelector("img");
-        lightboxImage.src = image.dataset.full || image.src;
-        lightboxImage.alt = image.alt;
-        lightbox.classList.add("active");
-        closeButton.focus();
-      });
-    });
-
-    closeButton.addEventListener("click", () => {
-      lightbox.classList.remove("active");
-      lightboxImage.src = "";
-      lastGalleryButton?.focus();
-    });
-
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        lightbox.classList.remove("active");
-        lightboxImage.src = "";
-      lastGalleryButton?.focus();
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Tab" && lightbox.classList.contains("active")) {
-        event.preventDefault();
-        closeButton.focus();
-      }
-      if (event.key === "Escape") {
-        lightbox.classList.remove("active");
-        lightboxImage.src = "";
-      lastGalleryButton?.focus();
-      }
-    });
   </script>
 <script src="../data/image-catalog.js"></script>
 <script src="../data/image-settings.js"></script>
 <script src="../assets/image-settings.js"></script>
+<script src="../assets/photo-zoom.js"></script>
 </body>
 </html>
